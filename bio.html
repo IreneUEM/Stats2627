@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Calendario de Bioestadistica 2026/27, Grado en Ingenieria Biomedica, grupo MC1 (GC), Universidad Europea de Madrid.">
+<style>:root{color-scheme:light dark}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Bioestadística 26/27</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#F7F4F3; --surface:#FFFFFF; --surface-2:#FBF8F7; --sunk:#EFEAE9;
+  --ink:#1F1A1B; --ink-2:#4A4143; --muted:#7D7173;
+  --rule:#E5DDDC; --rule-2:#CEC3C2;
+  --accent:#C4122F; --accent-2:#8A0C21;
+  --k-jitt:#B0761A; --k-lab:#0E8F86; --k-proj:#7A4FA8; --k-exam:#C4122F; --k-exam2:#8A0C21;
+  --t-jitt:#FBF2E4; --t-lab:#E4F3F1; --t-proj:#F0EAF8; --t-exam:#FBE8EB; --t-class:#F0ECEB;
+  --shadow:0 1px 2px rgba(31,26,27,.05),0 8px 24px -16px rgba(31,26,27,.28);
+  --sans:"IBM Plex Sans",ui-sans-serif,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  --serif:"Spectral",ui-serif,Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#141112; --surface:#1B1718; --surface-2:#221D1F; --sunk:#100D0E;
+  --ink:#F3EEED; --ink-2:#C6BCBB; --muted:#8F8486;
+  --rule:#332C2E; --rule-2:#4B4245;
+  --accent:#E04A62; --accent-2:#F08296;
+  --k-jitt:#BC8628; --k-lab:#1FA89A; --k-proj:#9B72D0; --k-exam:#E04A62; --k-exam2:#F08296;
+  --t-jitt:#2B2317; --t-lab:#122724; --t-proj:#241E30; --t-exam:#2E1A1E; --t-class:#241F21;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -18px rgba(0,0,0,.8);
+}}
+:root[data-theme="dark"]{
+  --ground:#141112; --surface:#1B1718; --surface-2:#221D1F; --sunk:#100D0E;
+  --ink:#F3EEED; --ink-2:#C6BCBB; --muted:#8F8486;
+  --rule:#332C2E; --rule-2:#4B4245;
+  --accent:#E04A62; --accent-2:#F08296;
+  --k-jitt:#BC8628; --k-lab:#1FA89A; --k-proj:#9B72D0; --k-exam:#E04A62; --k-exam2:#F08296;
+  --t-jitt:#2B2317; --t-lab:#122724; --t-proj:#241E30; --t-exam:#2E1A1E; --t-class:#241F21;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -18px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:34px 22px 80px}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- header ---------- */
+.hd{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:34px;
+  align-items:end;padding-bottom:22px;border-bottom:2px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;display:block;margin-bottom:10px}
+h1{font-size:clamp(30px,4.4vw,48px);font-weight:700;line-height:1.04;letter-spacing:-.015em}
+h1 em{font-style:italic;font-weight:500;color:var(--ink-2)}
+.lede{margin:12px 0 0;max-width:56ch;color:var(--ink-2);font-size:15.5px}
+.ds{display:grid;grid-template-columns:auto 1fr;gap:5px 16px;font-size:12.5px;align-content:end}
+.ds dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);padding-top:2px}
+.ds dd{margin:0;font-weight:500;color:var(--ink)}
+
+/* ---------- vitals ---------- */
+.vit{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));
+  gap:0;margin:0;border-bottom:1px solid var(--rule)}
+.vit div{padding:16px 18px 15px;border-right:1px solid var(--rule)}
+.vit div:last-child{border-right:0}
+.vit b{display:block;font-family:var(--mono);font-size:26px;font-weight:500;
+  letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.vit span{display:block;margin-top:6px;font-size:11.5px;color:var(--muted);line-height:1.35}
+.vit .neg b{color:var(--accent)}
+
+/* ---------- sections ---------- */
+section{margin-top:52px}
+.sh{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.sh h2{font-size:23px;font-weight:600;letter-spacing:-.01em}
+.sh .num{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.12em;
+  border:1px solid var(--rule-2);border-radius:2px;padding:2px 6px}
+.sub{color:var(--muted);font-size:14px;margin:0 0 20px;max-width:70ch}
+
+/* ---------- calendar ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;align-items:center}
+.lg{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:500;
+  background:var(--surface);border:1px solid var(--rule);border-radius:999px;
+  padding:5px 12px 5px 9px;cursor:pointer;color:var(--ink-2);font-family:inherit;
+  transition:border-color .12s,color .12s}
+.lg:hover{border-color:var(--rule-2);color:var(--ink)}
+.lg[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);background:var(--surface-2)}
+.lg i{width:11px;height:11px;border-radius:3px;flex:none}
+.lg.l-jitt i{background:var(--k-jitt)} .lg.l-lab i{background:var(--k-lab)}
+.lg.l-proj i{background:var(--k-proj)} .lg.l-exam i{background:var(--k-exam)}
+.lg.l-class i{background:var(--t-class);box-shadow:inset 0 -2px 0 var(--rule-2)}
+.lg.l-hol i{background:repeating-linear-gradient(135deg,var(--rule-2) 0 2px,transparent 2px 4px)}
+.lg.st{cursor:default;background:none;border-color:transparent;padding-left:2px;font-weight:400;color:var(--muted)}
+.lg.st:hover{border-color:transparent}
+
+.cal{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;
+  background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:18px;
+  box-shadow:var(--shadow)}
+.mo-h{display:flex;align-items:baseline;justify-content:space-between;
+  padding-bottom:7px;margin-bottom:8px;border-bottom:1px solid var(--rule)}
+.mo-n{font-family:var(--serif);font-size:15px;font-weight:600}
+.mo-y{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.08em}
+.mo-g{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.dow{font-family:var(--mono);font-size:9px;color:var(--muted);text-align:center;
+  padding-bottom:3px;letter-spacing:.04em}
+.dc{position:relative;display:flex;align-items:center;justify-content:center;
+  aspect-ratio:1/.92;border-radius:3px;font-family:var(--mono);font-size:11.5px;
+  color:var(--muted);font-variant-numeric:tabular-nums;transition:opacity .14s}
+.dc i{font-style:normal}
+.dc.pad{visibility:hidden}
+.dc.sem{background:var(--sunk);color:var(--ink-2)}
+.dc.wknd{color:var(--rule-2)}
+.dc.hol{background:repeating-linear-gradient(135deg,var(--rule) 0 3px,transparent 3px 6px);
+  color:var(--muted);box-shadow:inset 0 0 0 1px var(--rule)}
+.dc.brk{background:var(--sunk);color:var(--rule-2);
+  background-image:repeating-linear-gradient(135deg,transparent 0 5px,var(--rule) 5px 6px)}
+.dc.win{background:var(--t-exam);color:var(--accent-2);font-weight:500;box-shadow:inset 0 -1.5px 0 var(--t-exam),inset 0 -2.5px 0 var(--rule-2)}
+.dc.ses{color:var(--ink);font-weight:500;cursor:default}
+.dc.ses .sn{position:absolute;top:1px;right:3px;font-size:8px;font-weight:600;
+  letter-spacing:.02em;opacity:.85}
+.dc.f-class{background:var(--t-class);box-shadow:inset 0 -2.5px 0 var(--rule-2)}
+.dc.f-class .sn{color:var(--muted)}
+.dc.f-lab{background:var(--t-lab);box-shadow:inset 0 -2.5px 0 var(--k-lab)}
+.dc.f-lab .sn{color:var(--k-lab)}
+.dc.f-proj{background:var(--t-proj);box-shadow:inset 0 -2.5px 0 var(--k-proj)}
+.dc.f-proj .sn{color:var(--k-proj)}
+.dc.f-exam{background:var(--t-exam);box-shadow:inset 0 -2.5px 0 var(--k-exam)}
+.dc.f-exam .sn{color:var(--k-exam)}
+.cal[data-only="lab"] .dc.ses:not(.f-lab),.cal[data-only="lab"] .dc.hol,
+.cal[data-only="proj"] .dc.ses:not(.f-proj),.cal[data-only="proj"] .dc.hol,
+.cal[data-only="exam"] .dc.ses:not(.f-exam),.cal[data-only="exam"] .dc.hol,
+.cal[data-only="class"] .dc.ses:not(.f-class),.cal[data-only="class"] .dc.hol,
+.cal[data-only="hol"] .dc.ses{opacity:.16}
+
+/* ---------- assessment ---------- */
+.agrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:26px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  padding:20px 22px;box-shadow:var(--shadow)}
+.card h3{font-size:14px;font-weight:600;margin-bottom:3px}
+.card .ch{font-size:12px;color:var(--muted);margin:0 0 16px}
+.bar{display:flex;gap:2px;height:38px;margin-bottom:14px}
+.sg{display:flex;align-items:center;justify-content:center;border-radius:3px;min-width:0}
+.sg b{font-family:var(--mono);font-size:13px;font-weight:600;color:#fff;letter-spacing:-.01em}
+.sg b i{font-style:normal;font-size:9px;opacity:.8}
+.s-jitt{background:var(--k-jitt)} .s-lab{background:var(--k-lab)}
+.s-proj{background:var(--k-proj)} .s-exam{background:var(--k-exam)} .s-exam2{background:var(--k-exam2)}
+table.at{width:100%;border-collapse:collapse;font-size:13px}
+table.at td{padding:8px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+table.at tr:last-child td{border-bottom:0}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-top:4px}
+table.at td:first-child{width:20px}
+.an{font-weight:500}
+.asub{display:block;font-size:11px;color:var(--muted);font-weight:400}
+.aw{font-family:var(--mono);font-weight:600;text-align:right;width:52px;
+  font-variant-numeric:tabular-nums}
+.ad{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right;
+  padding-left:14px!important;white-space:nowrap}
+svg{width:100%;height:auto;display:block}
+.gl{stroke:var(--rule);stroke-width:1}
+.ax{stroke:var(--rule-2);stroke-width:1}
+.tk{font-family:var(--mono);font-size:9.5px;fill:var(--muted)}
+.tk.end{font-size:9px;fill:var(--muted)}
+.ln{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round}
+.ar{fill:var(--accent);opacity:.07;stroke:none}
+.dot{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.dot.last{r:5.5}
+.vl{font-family:var(--mono);font-size:10.5px;font-weight:600;fill:var(--ink-2)}
+.vl.strong{fill:var(--accent);font-size:12px}
+
+/* ---------- session table ---------- */
+.tw{background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  overflow-x:auto;box-shadow:var(--shadow)}
+table.ss{width:100%;border-collapse:collapse;font-size:13.5px;min-width:760px}
+table.ss td{padding:11px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.ss tr:last-child td{border-bottom:0}
+tr.ub td{background:var(--surface-2);padding:11px 12px;border-bottom:1px solid var(--rule-2);
+  border-top:1px solid var(--rule-2)}
+.ub-n{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-right:11px}
+.ub-t{font-family:var(--serif);font-size:15px;font-weight:600}
+.ub-w{font-family:var(--mono);font-size:10px;color:var(--muted);float:right;padding-top:4px}
+.c-wk{width:44px}
+.wk{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.03em}
+.c-dt{width:78px;white-space:nowrap}
+.dw{display:block;font-family:var(--mono);font-size:9.5px;color:var(--muted);
+  letter-spacing:.08em;text-transform:uppercase}
+.dd{display:block;font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--ink)}
+.c-no{width:34px;font-family:var(--mono);font-size:11px;color:var(--muted);
+  text-align:right;font-variant-numeric:tabular-nums}
+.st{font-weight:600;line-height:1.35;margin-bottom:3px}
+.sd{color:var(--muted);font-size:12.5px;line-height:1.45;max-width:62ch}
+.jt{display:inline-block;margin-left:8px;font-family:var(--mono);font-size:8.5px;
+  font-weight:600;letter-spacing:.08em;color:var(--k-jitt);border:1px solid var(--k-jitt);
+  border-radius:2px;padding:1px 4px;vertical-align:2px}
+.c-du{width:236px}
+.chip{display:block;font-size:11.5px;line-height:1.35;font-weight:500;
+  border-left:3px solid var(--rule-2);padding:3px 0 3px 9px;margin-bottom:6px;color:var(--ink-2)}
+.chip:last-child{margin-bottom:0}
+.chip b{font-family:var(--mono);font-size:11px;font-weight:600;white-space:nowrap}
+.c-lab{border-left-color:var(--k-lab)} .c-lab b{color:var(--k-lab)}
+.c-proj{border-left-color:var(--k-proj)} .c-proj b{color:var(--k-proj)}
+.c-exam{border-left-color:var(--k-exam)} .c-exam b{color:var(--k-exam)}
+.c-jitt{border-left-color:var(--k-jitt)} .c-jitt b{color:var(--k-jitt)}
+.nil{color:var(--rule-2);padding-left:12px;font-size:12px}
+tr.hr td,tr.br td{background:var(--sunk)}
+tr.hr .st,tr.br .st{font-weight:500;color:var(--muted);font-family:var(--serif);font-style:italic}
+tr.hr .dd,tr.br .dd{color:var(--muted)}
+tr.exm td{background:var(--t-exam)}
+tr.exm .st{color:var(--accent-2)}
+
+/* ---------- milestones ---------- */
+.ms{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;
+  background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  overflow:hidden;box-shadow:var(--shadow)}
+.ms>div{padding:18px 20px;border-right:1px solid var(--rule);
+  border-top:3px solid var(--k-proj);display:flex;flex-direction:column;gap:7px}
+.ms>div:last-child{border-right:0}
+.ms>div.fin{border-top-color:var(--accent);background:var(--surface-2)}
+.ms .mk{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--k-proj);font-weight:600}
+.ms>div.fin .mk{color:var(--accent)}
+.ms .md{font-family:var(--mono);font-size:14px;font-weight:600;letter-spacing:-.01em}
+.ms .mb{font-size:12.5px;color:var(--muted);line-height:1.5;margin:0}
+
+/* ---------- rules ---------- */
+.rl{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.rl article{background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  padding:17px 19px;box-shadow:var(--shadow)}
+.rl h3{font-size:13.5px;font-weight:600;margin-bottom:7px;display:flex;
+  align-items:baseline;gap:8px}
+.rl h3 span{font-family:var(--mono);font-size:9.5px;color:var(--muted);
+  letter-spacing:.1em;text-transform:uppercase}
+.rl p{margin:0;font-size:12.5px;color:var(--ink-2);line-height:1.55}
+.rl strong{color:var(--ink);font-weight:600}
+.rl .hot{border-color:var(--k-exam)}
+.rl .hot h3 span{color:var(--k-exam)}
+
+/* ---------- notes ---------- */
+.note{background:var(--surface-2);border:1px solid var(--rule-2);border-left:3px solid var(--accent);
+  border-radius:4px;padding:20px 22px}
+.note h3{font-size:14px;font-weight:600;margin-bottom:12px}
+.note ol{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);line-height:1.6}
+.note li{margin-bottom:9px}
+.note li:last-child{margin-bottom:0}
+.note code{font-family:var(--mono);font-size:11.5px;background:var(--sunk);
+  padding:1px 5px;border-radius:2px;color:var(--ink)}
+footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--rule);
+  font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;
+  gap:16px;flex-wrap:wrap}
+footer span{font-family:var(--mono)}
+
+@media (max-width:860px){
+  .hd{grid-template-columns:1fr;gap:22px;align-items:start}
+  .agrid{grid-template-columns:1fr}
+  .ms>div{border-right:0;border-bottom:1px solid var(--rule)}
+}
+@media print{
+  :root{--ground:#fff;--surface:#fff;--shadow:none}
+  .wrap{max-width:100%;padding:0}
+  .legend{display:none}
+  section{break-inside:avoid;margin-top:26px}
+  table.ss tr,.card,.rl article,.ms>div{break-inside:avoid}
+  .tw{overflow:visible;border:1px solid #ccc}
+}
+
+.chart{background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  padding:22px 24px 18px;box-shadow:var(--shadow)}
+.chart svg{width:100%;height:auto;display:block}
+.gl{stroke:var(--rule);stroke-width:1}
+.ax{stroke:var(--rule-2);stroke-width:1}
+.gd{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:5 4;opacity:.55}
+.gt{font-family:var(--mono);font-size:11px;fill:var(--accent);letter-spacing:.02em}
+.tk{font-family:var(--mono);font-size:11.5px;fill:var(--muted)}
+.ln{fill:none;stroke:var(--accent);stroke-width:2.6;stroke-linejoin:round}
+.ar{fill:var(--accent);opacity:.07;stroke:none}
+.dot{fill:var(--accent);stroke:var(--surface);stroke-width:2.5}
+.vl{font-family:var(--mono);font-size:14px;font-weight:600;fill:var(--ink)}
+.vl.strong{fill:var(--accent);font-size:16px}
+.el{font-family:var(--sans);font-size:11.5px;fill:var(--muted)}
+
+
+.chart{background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  padding:22px 24px 18px;box-shadow:var(--shadow)}
+.chart svg{width:100%;height:auto;display:block}
+.gl{stroke:var(--rule);stroke-width:1}
+.ax{stroke:var(--rule-2);stroke-width:1}
+.gd{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:5 4;opacity:.55}
+.gt{font-family:var(--mono);font-size:11px;fill:var(--accent);letter-spacing:.02em}
+.tk{font-family:var(--mono);font-size:11.5px;fill:var(--muted)}
+.ln{fill:none;stroke:var(--accent);stroke-width:2.6;stroke-linejoin:round}
+.ar{fill:var(--accent);opacity:.07;stroke:none}
+.dot{fill:var(--accent);stroke:var(--surface);stroke-width:2.5}
+.vl{font-family:var(--mono);font-size:14px;font-weight:600;fill:var(--ink)}
+.vl.strong{fill:var(--accent);font-size:16px}
+.el{font-family:var(--sans);font-size:11.5px;fill:var(--muted)}
+
+</style>
+<div class="wrap">
+<header class="hd">
+  <div>
+    <span class="eyebrow">Universidad Europea de Madrid &middot; Primer semestre 2026/27</span>
+    <h1>Bioestadística </h1>
+    <p class="lede">El semestre resumido: clases, entregas y festivos. Los cuatro festivos caen en lunes y no hay ninguna clase entre el 21 de diciembre y el examen, así que no dejes el repaso para enero.</p>
+  </div>
+  <dl class="ds"><dt>Titulación</dt><dd>Grado en Ingeniería Biomédica</dd><dt>Grupo</dt><dd>MC1 &middot; (GC) &middot; docencia en español</dd><dt>Créditos</dt><dd>6 ECTS &middot; Presencial</dd><dt>Horario</dt><dd>Lunes y miércoles, 16:30-18:30</dd><dt>Profesora</dt><dd>Irene Garbajosa Suárez</dd><dt>Periodo</dt><dd>7 sep 2026 &ndash; 22 ene 2027</dd></dl>
+</header>
+
+<div class="vit"><div class=""><b>27</b><span>clases en total<br>7 sep &ndash; 21 dic</span></div><div class="neg"><b>4</b><span>lunes perdidos<br>por festivos</span></div><div class=""><b>18</b><span>cuestionarios JiTT<br>antes de clase</span></div><div class=""><b>3</b><span>entregas de proyecto<br>todas obligatorias</span></div><div class=""><b>2</b><span>exámenes<br>parcial y final</span></div><div class=""><b>65<i style="font-size:16px;font-style:normal">%</i></b><span>de tu nota está decidido<br>el 16 de diciembre</span></div></div>
+
+<section>
+  <div class="sh"><span class="num">01</span><h2>Calendario del semestre</h2></div>
+  <p class="sub">Cada celda numerada es una clase, y el número es el de la sesión en la tabla de más abajo. Pasa el ratón por encima de un día para ver qué toca. Pulsa un filtro para quedarte solo con un tipo de día.</p>
+  <div class="legend">
+    <button class="lg l-class" data-f="class" aria-pressed="false"><i></i>Clase</button>
+    <button class="lg l-lab" data-f="lab" aria-pressed="false"><i></i>Práctica computacional</button>
+    <button class="lg l-proj" data-f="proj" aria-pressed="false"><i></i>Proyecto: entrega o aula invertida</button>
+    <button class="lg l-exam" data-f="exam" aria-pressed="false"><i></i>Examen</button>
+    <button class="lg l-hol" data-f="hol" aria-pressed="false"><i></i>Festivo</button>
+    <span class="lg st"><i style="background:var(--t-exam);box-shadow:inset 0 -2px 0 var(--rule-2)"></i>Periodo oficial de exámenes</span>
+  </div>
+  <div class="cal" id="cal"><div class="mo"><div class="mo-h"><span class="mo-n">Septiembre</span><span class="mo-y">2026</span></div><div class="mo-g"><span class="dow">L</span><span class="dow">M</span><span class="dow">X</span><span class="dow">J</span><span class="dow">V</span><span class="dow">S</span><span class="dow">D</span><span class="dc pad"></span><span class="dc"><i>1</i></span><span class="dc"><i>2</i></span><span class="dc"><i>3</i></span><span class="dc"><i>4</i></span><span class="dc wknd"><i>5</i></span><span class="dc wknd"><i>6</i></span><span class="dc sem ses f-class" title="Sesión 1 — Presentación del curso y datos en biomedicina"><i>7</i><b class="sn">1</b></span><span class="dc sem"><i>8</i></span><span class="dc sem ses f-lab" title="Sesión 2 — Distribuciones de frecuencias y gráficos · Lab 0 — monta tu entorno"><i>9</i><b class="sn">2</b></span><span class="dc sem"><i>10</i></span><span class="dc sem"><i>11</i></span><span class="dc wknd"><i>12</i></span><span class="dc wknd"><i>13</i></span><span class="dc sem ses f-class" title="Sesión 3 — Medidas de tendencia central y posición"><i>14</i><b class="sn">3</b></span><span class="dc sem"><i>15</i></span><span class="dc sem ses f-lab" title="Sesión 4 — Dispersión, forma y valores atípicos · Se publica el enunciado del Informe 1"><i>16</i><b class="sn">4</b></span><span class="dc sem"><i>17</i></span><span class="dc sem"><i>18</i></span><span class="dc wknd"><i>19</i></span><span class="dc wknd"><i>20</i></span><span class="dc sem ses f-class" title="Sesión 5 — Descripción bivariante"><i>21</i><b class="sn">5</b></span><span class="dc sem"><i>22</i></span><span class="dc sem ses f-lab" title="Sesión 6 — Laboratorio computacional 1 — AED completo · Laboratorio en clase — trabajas el Informe 1"><i>23</i><b class="sn">6</b></span><span class="dc sem"><i>24</i></span><span class="dc sem"><i>25</i></span><span class="dc wknd"><i>26</i></span><span class="dc wknd"><i>27</i></span><span class="dc sem ses f-class" title="Sesión 7 — Fundamentos de probabilidad"><i>28</i><b class="sn">7</b></span><span class="dc sem"><i>29</i></span><span class="dc sem ses f-class" title="Sesión 8 — Probabilidad condicionada y Bayes"><i>30</i><b class="sn">8</b></span></div></div><div class="mo"><div class="mo-h"><span class="mo-n">Octubre</span><span class="mo-y">2026</span></div><div class="mo-g"><span class="dow">L</span><span class="dow">M</span><span class="dow">X</span><span class="dow">J</span><span class="dow">V</span><span class="dow">S</span><span class="dow">D</span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc sem"><i>1</i></span><span class="dc sem"><i>2</i></span><span class="dc wknd"><i>3</i></span><span class="dc wknd"><i>4</i></span><span class="dc sem ses f-class" title="Sesión 9 — Taller de problemas de probabilidad"><i>5</i><b class="sn">9</b></span><span class="dc sem"><i>6</i></span><span class="dc sem ses f-lab" title="Sesión 10 — Taller de revisión del Informe 1 · Actividad 2 — Informe de Prácticas Computacionales 1 5%"><i>7</i><b class="sn">10</b></span><span class="dc sem"><i>8</i></span><span class="dc sem"><i>9</i></span><span class="dc wknd"><i>10</i></span><span class="dc wknd"><i>11</i></span><span class="dc hol" title="Festivo · Fiesta Nacional de España"><i>12</i></span><span class="dc sem"><i>13</i></span><span class="dc sem ses f-proj" title="Sesión 11 — Variables aleatorias discretas · Entrega 1 del proyecto — tema, datos y pregunta"><i>14</i><b class="sn">11</b></span><span class="dc sem"><i>15</i></span><span class="dc sem"><i>16</i></span><span class="dc wknd"><i>17</i></span><span class="dc wknd"><i>18</i></span><span class="dc sem ses f-class" title="Sesión 12 — Variables aleatorias continuas"><i>19</i><b class="sn">12</b></span><span class="dc sem"><i>20</i></span><span class="dc sem ses f-class" title="Sesión 13 — La distribución normal y el TCL"><i>21</i><b class="sn">13</b></span><span class="dc sem"><i>22</i></span><span class="dc sem"><i>23</i></span><span class="dc wknd"><i>24</i></span><span class="dc wknd"><i>25</i></span><span class="dc sem ses f-lab" title="Sesión 14 — Sesión de problemas evaluable · Actividad 3 — Resolución de problemas en clase 5%"><i>26</i><b class="sn">14</b></span><span class="dc sem"><i>27</i></span><span class="dc sem ses f-class" title="Sesión 15 — Repaso integrador y simulacro"><i>28</i><b class="sn">15</b></span><span class="dc sem"><i>29</i></span><span class="dc sem"><i>30</i></span><span class="dc wknd"><i>31</i></span></div></div><div class="mo"><div class="mo-h"><span class="mo-n">Noviembre</span><span class="mo-y">2026</span></div><div class="mo-g"><span class="dow">L</span><span class="dow">M</span><span class="dow">X</span><span class="dow">J</span><span class="dow">V</span><span class="dow">S</span><span class="dow">D</span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc wknd"><i>1</i></span><span class="dc hol" title="Festivo · Todos los Santos (traslado)"><i>2</i></span><span class="dc sem"><i>3</i></span><span class="dc sem ses f-exam" title="Sesión 16 — EXAMEN PARCIAL · Examen parcial 15%"><i>4</i><b class="sn">16</b></span><span class="dc sem"><i>5</i></span><span class="dc sem"><i>6</i></span><span class="dc wknd"><i>7</i></span><span class="dc wknd"><i>8</i></span><span class="dc hol" title="Festivo · Ntra. Sra. de la Almudena"><i>9</i></span><span class="dc sem"><i>10</i></span><span class="dc sem ses f-proj" title="Sesión 17 — Estimación e intervalos de confianza · Entrega 2 del proyecto — datos y análisis descriptivo · Se publica el enunciado del Informe 2"><i>11</i><b class="sn">17</b></span><span class="dc sem"><i>12</i></span><span class="dc sem"><i>13</i></span><span class="dc wknd"><i>14</i></span><span class="dc wknd"><i>15</i></span><span class="dc sem ses f-class" title="Sesión 18 — Contraste de hipótesis"><i>16</i><b class="sn">18</b></span><span class="dc sem"><i>17</i></span><span class="dc sem ses f-lab" title="Sesión 19 — Laboratorio computacional 2 — dos poblaciones · Laboratorio en clase — trabajas el Informe 2"><i>18</i><b class="sn">19</b></span><span class="dc sem"><i>19</i></span><span class="dc sem"><i>20</i></span><span class="dc wknd"><i>21</i></span><span class="dc wknd"><i>22</i></span><span class="dc sem ses f-lab" title="Sesión 20 — Regresión lineal · Actividad 4 — Informe de Prácticas Computacionales 2 5%"><i>23</i><b class="sn">20</b></span><span class="dc sem"><i>24</i></span><span class="dc sem ses f-class" title="Sesión 21 — Diagnóstico del modelo"><i>25</i><b class="sn">21</b></span><span class="dc sem"><i>26</i></span><span class="dc sem"><i>27</i></span><span class="dc wknd"><i>28</i></span><span class="dc wknd"><i>29</i></span><span class="dc sem ses f-class" title="Sesión 22 — ANOVA de un factor"><i>30</i><b class="sn">22</b></span></div></div><div class="mo"><div class="mo-h"><span class="mo-n">Diciembre</span><span class="mo-y">2026</span></div><div class="mo-g"><span class="dow">L</span><span class="dow">M</span><span class="dow">X</span><span class="dow">J</span><span class="dow">V</span><span class="dow">S</span><span class="dow">D</span><span class="dc pad"></span><span class="dc sem"><i>1</i></span><span class="dc sem ses f-proj" title="Sesión 23 — Laboratorio de análisis de datos — χ² y no paramétricos · Actividad 5 — Entrega 3: análisis de datos completo 5%"><i>2</i><b class="sn">23</b></span><span class="dc sem"><i>3</i></span><span class="dc sem"><i>4</i></span><span class="dc wknd"><i>5</i></span><span class="dc wknd"><i>6</i></span><span class="dc hol" title="Festivo · Día de la Constitución (traslado)"><i>7</i></span><span class="dc hol" title="Festivo · Inmaculada Concepción"><i>8</i></span><span class="dc sem ses f-class" title="Sesión 24 — Diseño de experimentos y de ensayos clínicos"><i>9</i><b class="sn">24</b></span><span class="dc sem"><i>10</i></span><span class="dc sem"><i>11</i></span><span class="dc wknd"><i>12</i></span><span class="dc wknd"><i>13</i></span><span class="dc sem ses f-proj" title="Sesión 25 — Aula invertida · Proyecto — Exposición y defensa 25%"><i>14</i><b class="sn">25</b></span><span class="dc sem"><i>15</i></span><span class="dc sem ses f-proj" title="Sesión 26 — Aula invertida · Proyecto — Exposición y defensa 25% · Cierre de la serie JiTT 5%"><i>16</i><b class="sn">26</b></span><span class="dc sem"><i>17</i></span><span class="dc sem"><i>18</i></span><span class="dc wknd"><i>19</i></span><span class="dc wknd"><i>20</i></span><span class="dc sem ses f-class" title="Sesión 27 — Cierre del semestre y guía del examen"><i>21</i><b class="sn">27</b></span><span class="dc sem"><i>22</i></span><span class="dc brk" title="Vacaciones de Navidad"><i>23</i></span><span class="dc brk" title="Vacaciones de Navidad"><i>24</i></span><span class="dc hol" title="Festivo · Navidad"><i>25</i></span><span class="dc wknd brk" title="Vacaciones de Navidad"><i>26</i></span><span class="dc wknd brk" title="Vacaciones de Navidad"><i>27</i></span><span class="dc brk" title="Vacaciones de Navidad"><i>28</i></span><span class="dc brk" title="Vacaciones de Navidad"><i>29</i></span><span class="dc brk" title="Vacaciones de Navidad"><i>30</i></span><span class="dc brk" title="Vacaciones de Navidad"><i>31</i></span></div></div><div class="mo"><div class="mo-h"><span class="mo-n">Enero</span><span class="mo-y">2027</span></div><div class="mo-g"><span class="dow">L</span><span class="dow">M</span><span class="dow">X</span><span class="dow">J</span><span class="dow">V</span><span class="dow">S</span><span class="dow">D</span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc hol" title="Festivo · Año Nuevo"><i>1</i></span><span class="dc wknd brk" title="Vacaciones de Navidad"><i>2</i></span><span class="dc wknd brk" title="Vacaciones de Navidad"><i>3</i></span><span class="dc brk" title="Vacaciones de Navidad"><i>4</i></span><span class="dc brk" title="Vacaciones de Navidad"><i>5</i></span><span class="dc hol" title="Festivo · Reyes"><i>6</i></span><span class="dc sem"><i>7</i></span><span class="dc sem"><i>8</i></span><span class="dc wknd"><i>9</i></span><span class="dc wknd"><i>10</i></span><span class="dc sem win" title="Periodo oficial de examenes"><i>11</i></span><span class="dc sem win" title="Periodo oficial de examenes"><i>12</i></span><span class="dc sem win" title="Periodo oficial de examenes"><i>13</i></span><span class="dc sem win" title="Periodo oficial de examenes"><i>14</i></span><span class="dc sem win" title="Periodo oficial de examenes"><i>15</i></span><span class="dc wknd"><i>16</i></span><span class="dc wknd"><i>17</i></span><span class="dc sem win" title="Periodo oficial de examenes"><i>18</i></span><span class="dc sem win" title="Periodo oficial de examenes"><i>19</i></span><span class="dc sem win" title="Periodo oficial de examenes"><i>20</i></span><span class="dc sem win" title="Periodo oficial de examenes"><i>21</i></span><span class="dc sem win" title="Periodo oficial de examenes"><i>22</i></span><span class="dc wknd"><i>23</i></span><span class="dc wknd"><i>24</i></span><span class="dc"><i>25</i></span><span class="dc"><i>26</i></span><span class="dc"><i>27</i></span><span class="dc"><i>28</i></span><span class="dc"><i>29</i></span><span class="dc wknd"><i>30</i></span><span class="dc wknd"><i>31</i></span></div></div></div>
+</section>
+
+<section>
+  <div class="sh"><span class="num">02</span><h2>Cómo se calcula tu nota</h2></div>
+  <p class="sub">Necesitas un 5,0 de media <em>y</em> un 5,0 en el examen final para que el resto promedie.</p>
+  <div class="agrid">
+    <div class="card">
+      <h3>Reparto de la nota</h3>
+      <p class="ch">Total 100 %</p>
+      <div class="bar"><span class="sg s-jitt" style="flex:5" title="Constancia en los JiTT — 5%"><b>5<i>%</i></b></span><span class="sg s-lab" style="flex:20" title="Prácticas computacionales — 20%"><b>20<i>%</i></b></span><span class="sg s-proj" style="flex:25" title="Proyecto y aula invertida — 25%"><b>25<i>%</i></b></span><span class="sg s-exam" style="flex:15" title="Examen parcial — 15%"><b>15<i>%</i></b></span><span class="sg s-exam2" style="flex:35" title="Examen final — 35%"><b>35<i>%</i></b></span></div>
+      <table class="at"><tbody><tr><td><span class="sw s-jitt"></span></td><td class="an">Constancia en los JiTT</td><td class="aw">5%</td><td class="ad">Semanal, cierra el 16 dic</td></tr><tr><td><span class="sw s-lab"></span></td><td class="an">Prácticas computacionales</td><td class="aw">20%</td><td class="ad">7 oct &middot; 26 oct &middot; 23 nov</td></tr><tr><td><span class="sw s-proj"></span></td><td class="an">Proyecto y aula invertida</td><td class="aw">25%</td><td class="ad">2 dic &middot; 14 y 16 dic</td></tr><tr><td><span class="sw s-exam"></span></td><td class="an">Examen parcial</td><td class="aw">15%</td><td class="ad">Mié 4 nov</td></tr><tr><td><span class="sw s-exam2"></span></td><td class="an">Examen final</td><td class="aw">35%</td><td class="ad">11&ndash;22 ene</td></tr></tbody></table>
+    </div>
+    <div class="card">
+      <h3>Lo que más cuenta</h3>
+      <p class="ch">Tres cosas que deciden el curso</p>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:4px">
+        <div class="pill">El <strong>examen final vale un 35 %</strong> y necesitas sacar al menos un 5,0 en él. Todo lo demás que hagas durante el curso solo cuenta si superas ese listón.</div>
+        <div class="pill">El aula invertida vale <strong>25 %</strong>, más que el parcial. Y para poder exponer tienes que haber subido las <strong>tres entregas de avance</strong>.</div>
+        <div class="pill">Los JiTT solo valen un 5 %, pero se cierran uno a uno: si dejas de hacerlos en octubre, ese 5 % ya no se recupera.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="num">03</span><h2>Cómo se te va acumulando la nota</h2></div>
+  <p class="sub">Porcentaje de la nota final ya decidido en cada fecha.</p>
+  <div class="chart"><svg viewBox="0 0 1120 310" role="img" aria-label="Porcentaje acumulado de la nota decidido a lo largo del semestre, de 0 % en septiembre a 100 % en el examen final." preserveAspectRatio="xMidYMid meet"><line class="gl" x1="64" y1="262.0" x2="1066" y2="262.0"/><text class="tk" x="54" y="266.0" text-anchor="end">0%</text><line class="gl" x1="64" y1="209.5" x2="1066" y2="209.5"/><text class="tk" x="54" y="213.5" text-anchor="end">25%</text><line class="gl" x1="64" y1="157.0" x2="1066" y2="157.0"/><text class="tk" x="54" y="161.0" text-anchor="end">50%</text><line class="gl" x1="64" y1="104.5" x2="1066" y2="104.5"/><text class="tk" x="54" y="108.5" text-anchor="end">75%</text><line class="gl" x1="64" y1="52.0" x2="1066" y2="52.0"/><text class="tk" x="54" y="56.0" text-anchor="end">100%</text><path class="ar" d="M 64.0 262.0 L 283.4 262.0 L 283.4 251.5 L 422.4 251.5 L 422.4 241.0 L 488.2 241.0 L 488.2 209.5 L 627.2 209.5 L 627.2 199.0 L 693.0 199.0 L 693.0 188.5 L 795.4 188.5 L 795.4 125.5 L 1014.8 125.5 L 1014.8 52.0 L 1066.0 52.0 L 1066.0 262.0 L 64.0 262.0 Z"/><line class="gd" x1="64" y1="125.5" x2="795.4" y2="125.5"/><text class="gt" x="72" y="116.5">65 % cerrado antes de Navidad</text><path class="ln" d="M 64.0 262.0 L 283.4 262.0 L 283.4 251.5 L 422.4 251.5 L 422.4 241.0 L 488.2 241.0 L 488.2 209.5 L 627.2 209.5 L 627.2 199.0 L 693.0 199.0 L 693.0 188.5 L 795.4 188.5 L 795.4 125.5 L 1014.8 125.5 L 1014.8 52.0 L 1066.0 52.0"/><circle class="dot" cx="283.4" cy="251.5" r="4.5"/><text class="vl" x="283.4" y="238.5" text-anchor="middle">5%</text><text class="el" x="283.4" y="223.5" text-anchor="middle">Informe 1</text><circle class="dot" cx="422.4" cy="241.0" r="4.5"/><text class="vl" x="422.4" y="228.0" text-anchor="middle">10%</text><text class="el" x="422.4" y="213.0" text-anchor="middle">Problemas</text><circle class="dot" cx="488.2" cy="209.5" r="4.5"/><text class="vl" x="488.2" y="196.5" text-anchor="middle">25%</text><text class="el" x="488.2" y="181.5" text-anchor="middle">Parcial</text><circle class="dot" cx="627.2" cy="199.0" r="4.5"/><text class="vl" x="627.2" y="186.0" text-anchor="middle">30%</text><text class="el" x="627.2" y="171.0" text-anchor="middle">Informe 2</text><circle class="dot" cx="693.0" cy="188.5" r="4.5"/><text class="vl" x="693.0" y="175.5" text-anchor="middle">35%</text><text class="el" x="693.0" y="160.5" text-anchor="middle">Entrega 3</text><circle class="dot" cx="795.4" cy="125.5" r="4.5"/><text class="vl" x="795.4" y="112.5" text-anchor="middle">65%</text><text class="el" x="795.4" y="97.5" text-anchor="middle">Aula invertida</text><circle class="dot last" cx="1014.8" cy="52.0" r="5.5"/><text class="vl strong" x="1002.8" y="39.0" text-anchor="end">100%</text><text class="el" x="1002.8" y="24.0" text-anchor="end">Examen final</text><line class="ax" x1="64.0" y1="262.0" x2="64.0" y2="268.0"/><text class="tk" x="64.0" y="283.0" text-anchor="middle">Sep</text><line class="ax" x1="239.5" y1="262.0" x2="239.5" y2="268.0"/><text class="tk" x="239.5" y="283.0" text-anchor="middle">Oct</text><line class="ax" x1="466.3" y1="262.0" x2="466.3" y2="268.0"/><text class="tk" x="466.3" y="283.0" text-anchor="middle">Nov</text><line class="ax" x1="685.7" y1="262.0" x2="685.7" y2="268.0"/><text class="tk" x="685.7" y="283.0" text-anchor="middle">Dic</text><line class="ax" x1="912.4" y1="262.0" x2="912.4" y2="268.0"/><text class="tk" x="912.4" y="283.0" text-anchor="middle">Ene</text></svg></div>
+</section>
+
+<section>
+  <div class="sh"><span class="num">04</span><h2>El proyecto, paso a paso</h2></div>
+  <p class="sub">Las tres entregas se suben al Campus Virtual y <b>no cambian lo que hacemos en clase</b>: son el modo de que vea vuestro avance real y pueda corregiros a tiempo.</p>
+  <div class="ms"><div class=""><span class="mk">Entrega 1</span><span class="md">Mié 14 oct</span><p class="mb">Elegís tema y conjunto de datos y planteáis la pregunta de investigación, con las variables respuesta y los factores candidatos.</p></div><div class=""><span class="mk">Entrega 2</span><span class="md">Mié 11 nov</span><p class="mb">Datos ya recogidos: análisis descriptivo, comprobación de que el diseño se sostiene y registro de cualquier desviación.</p></div><div class=""><span class="mk">Entrega 3</span><span class="md">Mié 2 dic</span><p class="mb">Análisis completo con los métodos vistos en clase, resultados interpretados y borrador de las conclusiones.</p></div><div class="fin"><span class="mk">Aula invertida</span><span class="md">14 y 16 dic</span><p class="mb">Dais la clase: 60 minutos sobre vuestro tema y experimento más preguntas de la clase.</p></div></div>
+</section>
+
+<section>
+  <div class="sh"><span class="num">05</span><h2>Sesión a sesión</h2></div>
+  <p class="sub">Las sesiones marcadas <span class="jt" style="margin-left:0">JiTT</span> llevan cuestionario previo, que cierra a las 18:00 del día anterior a la clase.</p>
+  <div class="tw"><table class="ss"><tbody><tr class="ub"><td colspan="5"><span class="ub-n">Unidad 1</span><span class="ub-t">Estadística descriptiva</span><span class="ub-w">Semanas 1-3</span></td></tr><tr><td class="c-wk"><span class="wk">S1</span></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">7 Sep</span></td><td class="c-no">1</td><td class="c-tx"><div class="st">Presentación del curso y datos en biomedicina</div><div class="sd">Cómo funciona la asignatura, cómo se te evalúa, la rutina JiTT y el entorno Python/R. Formas tu equipo de proyecto (4-5). Población y muestra, tipos de variable clínica y diseños de muestreo.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">S1</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">9 Sep</span></td><td class="c-no">2</td><td class="c-tx"><div class="st">Distribuciones de frecuencias y gráficos<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Tablas de frecuencias, histogramas, diagramas de Pareto y de caja. Trae portátil: montas Jupyter o RMarkdown y ejecutas tu primer cuaderno.</div></td><td class="c-du"><span class="chip c-lab">Lab 0 — monta tu entorno</span></td></tr><tr><td class="c-wk"><span class="wk">S2</span></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">14 Sep</span></td><td class="c-no">3</td><td class="c-tx"><div class="st">Medidas de tendencia central y posición<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Media, mediana, moda y media recortada; cuartiles y percentiles clínicos, y por qué la mediana aguanta una muestra contaminada.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">S2</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">16 Sep</span></td><td class="c-no">4</td><td class="c-tx"><div class="st">Dispersión, forma y valores atípicos<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Rango, varianza, s y CV; asimetría y curtosis. Reglas de atípicos (1,5·RIC y puntuación z) aplicadas a analíticas, y desigualdad de Chebyshev.</div></td><td class="c-du"><span class="chip c-lab">Se publica el enunciado del Informe 1</span></td></tr><tr><td class="c-wk"><span class="wk">S3</span></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">21 Sep</span></td><td class="c-no">5</td><td class="c-tx"><div class="st">Descripción bivariante<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Covarianza, correlación de Pearson y Spearman, recta de mínimos cuadrados y R². Por qué correlación no es causalidad, y qué es un factor de confusión.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">S3</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">23 Sep</span></td><td class="c-no">6</td><td class="c-tx"><div class="st">Laboratorio computacional 1 — AED completo</div><div class="sd">Haces en clase un análisis exploratorio completo de una base de historiales clínicos: limpieza, valores ausentes, resúmenes, gráficos e interpretación escrita.</div></td><td class="c-du"><span class="chip c-lab">Laboratorio en clase — trabajas el Informe 1</span></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Unidad 2</span><span class="ub-t">Probabilidad</span><span class="ub-w">Semanas 4-5</span></td></tr><tr><td class="c-wk"><span class="wk">S4</span></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">28 Sep</span></td><td class="c-no">7</td><td class="c-tx"><div class="st">Fundamentos de probabilidad<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Experimento aleatorio, espacio muestral, sucesos, axiomas de Kolmogorov y reglas de conteo.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">S4</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">30 Sep</span></td><td class="c-no">8</td><td class="c-tx"><div class="st">Probabilidad condicionada y Bayes<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Independencia, probabilidad total y teorema de Bayes, aplicados a pruebas diagnósticas: sensibilidad, especificidad, valores predictivos y falsos positivos.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">S5</span></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">5 Oct</span></td><td class="c-no">9</td><td class="c-tx"><div class="st">Taller de problemas de probabilidad<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Árboles de probabilidad, cribado poblacional y riesgo familiar en herencia mendeliana. Resuelves tú, comentamos después.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">S5</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">7 Oct</span></td><td class="c-no">10</td><td class="c-tx"><div class="st">Taller de revisión del Informe 1</div><div class="sd">Repasamos juntos vuestras entregas: los errores estadísticos que más se repiten y qué aspecto tiene un buen cuaderno.</div></td><td class="c-du"><span class="chip c-lab">Actividad 2 — Informe de Prácticas Computacionales 1 <b>5%</b></span></td></tr><tr class="hr"><td class="c-wk"></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">12 Oct</span></td><td class="c-no">&mdash;</td><td class="c-tx" colspan="2"><div class="st">Sin clase &middot; Fiesta Nacional de España</div></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Unidad 3</span><span class="ub-t">Funciones de densidad y distribución</span><span class="ub-w">Semanas 6-7</span></td></tr><tr><td class="c-wk"><span class="wk">S6</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">14 Oct</span></td><td class="c-no">11</td><td class="c-tx"><div class="st">Variables aleatorias discretas<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Función de masa y de distribución, E[X] y Var[X]. Bernoulli, binomial y Poisson: eventos raros como mutaciones, brotes o recuentos celulares.</div></td><td class="c-du"><span class="chip c-proj">Entrega 1 del proyecto — tema, datos y pregunta</span></td></tr><tr><td class="c-wk"><span class="wk">S7</span></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">19 Oct</span></td><td class="c-no">12</td><td class="c-tx"><div class="st">Variables aleatorias continuas<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Función de densidad y de distribución. Uniforme y exponencial: falta de memoria, tasa de fallo y tiempo hasta el evento, con un adelanto de Weibull.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">S7</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">21 Oct</span></td><td class="c-no">13</td><td class="c-tx"><div class="st">La distribución normal y el TCL<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Tipificación, percentiles y valores de referencia de laboratorio, gráficos Q-Q, aproximación normal a la binomial y Teorema Central del Límite.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Bloque</span><span class="ub-t">Repaso y examen parcial</span><span class="ub-w">Semanas 8-9</span></td></tr><tr><td class="c-wk"><span class="wk">S8</span></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">26 Oct</span></td><td class="c-no">14</td><td class="c-tx"><div class="st">Sesión de problemas evaluable</div><div class="sd">Resuelves en clase problemas de las Unidades 1-3, de forma individual y con tus apuntes. Cuenta para nota, pero no es un examen.</div></td><td class="c-du"><span class="chip c-lab">Actividad 3 — Resolución de problemas en clase <b>5%</b></span></td></tr><tr><td class="c-wk"><span class="wk">S8</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">28 Oct</span></td><td class="c-no">15</td><td class="c-tx"><div class="st">Repaso integrador y simulacro</div><div class="sd">Un examen de prueba resuelto entero en clase, los criterios de corrección, técnica de examen y dudas abiertas.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr class="hr"><td class="c-wk"></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">2 Nov</span></td><td class="c-no">&mdash;</td><td class="c-tx" colspan="2"><div class="st">Sin clase &middot; Todos los Santos (traslado)</div></td></tr><tr><td class="c-wk"><span class="wk">S9</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">4 Nov</span></td><td class="c-no">16</td><td class="c-tx"><div class="st">EXAMEN PARCIAL</div><div class="sd">Prueba escrita sobre las Unidades 1-3. Se te facilitan formulario y tablas; trae calculadora científica.</div></td><td class="c-du"><span class="chip c-exam">Examen parcial <b>15%</b></span></td></tr><tr class="hr"><td class="c-wk"></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">9 Nov</span></td><td class="c-no">&mdash;</td><td class="c-tx" colspan="2"><div class="st">Sin clase &middot; Ntra. Sra. de la Almudena</div></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Unidad 4</span><span class="ub-t">Inferencia estadística</span><span class="ub-w">Semanas 10-11</span></td></tr><tr><td class="c-wk"><span class="wk">S10</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">11 Nov</span></td><td class="c-no">17</td><td class="c-tx"><div class="st">Estimación e intervalos de confianza<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Distribuciones en el muestreo y TCL en la práctica. Estimación puntual e intervalos para μ, p y σ², y cálculo del tamaño muestral. Te devolvemos el parcial.</div></td><td class="c-du"><span class="chip c-proj">Entrega 2 del proyecto — datos y análisis descriptivo</span><span class="chip c-lab">Se publica el enunciado del Informe 2</span></td></tr><tr><td class="c-wk"><span class="wk">S11</span></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">16 Nov</span></td><td class="c-no">18</td><td class="c-tx"><div class="st">Contraste de hipótesis<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">H₀ y H₁, errores de tipo I y II, α, p-valor, potencia y tamaño muestral. Contrastes de una población.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">S11</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">18 Nov</span></td><td class="c-no">19</td><td class="c-tx"><div class="st">Laboratorio computacional 2 — dos poblaciones<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">t de Student pareada e independiente, contraste F y comparación de dos proporciones, con Odds Ratio y Riesgo Relativo, sobre datos reales en clase.</div></td><td class="c-du"><span class="chip c-lab">Laboratorio en clase — trabajas el Informe 2</span></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Unidad 5</span><span class="ub-t">Análisis de datos</span><span class="ub-w">Semanas 12-13</span></td></tr><tr><td class="c-wk"><span class="wk">S12</span></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">23 Nov</span></td><td class="c-no">20</td><td class="c-tx"><div class="st">Regresión lineal<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Mínimos cuadrados simple y múltiple, R² y R² ajustado, inferencia sobre los coeficientes y ajuste por factores de confusión.</div></td><td class="c-du"><span class="chip c-lab">Actividad 4 — Informe de Prácticas Computacionales 2 <b>5%</b></span></td></tr><tr><td class="c-wk"><span class="wk">S12</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">25 Nov</span></td><td class="c-no">21</td><td class="c-tx"><div class="st">Diagnóstico del modelo<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Análisis de residuos, heterocedasticidad, multicolinealidad (VIF), puntos influyentes y selección de modelo.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">S13</span></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">30 Nov</span></td><td class="c-no">22</td><td class="c-tx"><div class="st">ANOVA de un factor<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Modelo y supuestos, tabla ANOVA, contraste F y comparaciones múltiples de Tukey: comparar tres o más tratamientos a la vez.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">S13</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">2 Dic</span></td><td class="c-no">23</td><td class="c-tx"><div class="st">Laboratorio de análisis de datos — χ² y no paramétricos<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Bondad de ajuste, tablas de contingencia y alternativas no paramétricas, aplicados en clase a los datos de tu propio proyecto.</div></td><td class="c-du"><span class="chip c-proj">Entrega del proyecto: análisis de datos completo y guión de la clase <b>5%</b></span></td></tr><tr class="hr"><td class="c-wk"></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">7 Dic</span></td><td class="c-no">&mdash;</td><td class="c-tx" colspan="2"><div class="st">Sin clase &middot; Día de la Constitución (traslado)</div></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Unidad 6</span><span class="ub-t">Diseño de experimentos y ensayos clínicos</span><span class="ub-w">Semanas 14-15</span></td></tr><tr><td class="c-wk"><span class="wk">S14</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">9 Dic</span></td><td class="c-no">24</td><td class="c-tx"><div class="st">Diseño de experimentos y de ensayos clínicos<span class="jt" title="El cuestionario JiTT cierra a las 18:00 del día anterior a la clase">JiTT</span></div><div class="sd">Aleatorización, replicación y bloqueo. Diseños factoriales 2ᵏ, efectos principales e interacciones, y su traducción al ensayo clínico: grupo control, cegamiento y tamaño muestral.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">S15</span></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">14 Dic</span></td><td class="c-no">25</td><td class="c-tx"><div class="st">Aula invertida</div><div class="sd">Dais la clase: 60 minutos sobre vuestro tema y experimento más preguntas de la clase.</div></td><td class="c-du"><span class="chip c-proj">Proyecto — Exposición y defensa <b>25%</b></span></td></tr><tr><td class="c-wk"><span class="wk">S15</span></td><td class="c-dt"><span class="dw">Mié</span><span class="dd">16 Dic</span></td><td class="c-no">26</td><td class="c-tx"><div class="st">Aula invertida</div><div class="sd">Exponen los equipos restantes.</div></td><td class="c-du"><span class="chip c-proj">Proyecto — Exposición y defensa <b>25%</b></span><span class="chip c-jitt">Cierre de la serie JiTT <b>5%</b></span></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Cierre</span><span class="ub-t">Cierre del semestre</span><span class="ub-w">Semana 16</span></td></tr><tr><td class="c-wk"><span class="wk">S16</span></td><td class="c-dt"><span class="dw">Lun</span><span class="dd">21 Dic</span></td><td class="c-no">27</td><td class="c-tx"><div class="st">Cierre del semestre y guía del examen</div><div class="sd">Feedback de las exposiciones, mapa del temario completo y guía de estudio del examen final. Último día para entregar lo que tengas pendiente.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr class="br"><td class="c-wk"></td><td class="c-dt"><span class="dd">23 Dic – 6 Ene</span></td><td class="c-no">&mdash;</td><td class="c-tx" colspan="2"><div class="st">Vacaciones de Navidad</div></td></tr>
+    <tr class="ub"><td colspan="5"><span class="ub-n">Oficial</span><span class="ub-t">Periodo de exámenes</span><span class="ub-w">Semanas 17-18</span></td></tr>
+    <tr class="exm"><td class="c-wk"><span class="wk">S17-18</span></td>
+      <td class="c-dt"><span class="dw">Por fijar</span><span class="dd">11&ndash;22 Ene</span></td>
+      <td class="c-no">&mdash;</td>
+      <td class="c-tx"><div class="st">Examen final &mdash; todo el temario</div>
+      <div class="sd">La fecha exacta y el aula las publica la escuela más adelante, en el calendario oficial de exámenes. Necesitas un 5,0 para que promedie con el resto.</div></td>
+      <td class="c-du"><span class="chip c-exam">Examen final <b>35%</b></span></td></tr>
+  </tbody></table></div>
+</section>
+
+<section>
+  <div class="sh"><span class="num">06</span><h2>Lo que tienes que saber</h2></div>
+  <p class="sub">Las normas que más notas cuestan cada año.</p>
+  <div class="rl"><article class="hot"><h3>Asistencia <span>mínimo 50 %</span></h3><p>Se pasa lista en cada sesión. Si asistes a menos del <strong>50 %</strong>, puedes presentarte al examen ordinario pero <strong>no se te corregirá</strong>. La asistencia por Teams cuenta si justificas la ausencia.</p></article><article class="hot"><h3>Para aprobar <span>dos condiciones</span></h3><p>Necesitas un <strong>5,0 de media ponderada</strong> y además un <strong>5,0 en el examen final</strong>. Si no llegas al 5,0 en el final, el resto del curso no promedia.</p></article><article class=""><h3>Cuestionarios JiTT <span>12:00 del día de clase</span></h3><p>Cada cuestionario previo cierra a las <strong>12:00 (CET) del mismo día de la clase</strong>. No se penalizan los fallos: se evalúa que los hagas, y a tiempo.</p></article><article class=""><h3>Entregas <span>23:59</span></h3><p>Todas las entregas escritas vencen a las <strong>23:59</strong> del día indicado, en el Campus Virtual. Las tardías se penalizan; el tope absoluto es el día antes del examen ordinario.</p></article><article class=""><h3>Tu equipo <span>4-5 personas</span></h3><p>Grupos de <strong>4 a 5</strong>. Las <strong>tres entregas de avance son obligatorias</strong>: si falta alguna, tu equipo no expone y pierde el 25 %. La exposición dura <strong>60 minutos</strong> más preguntas.</p></article><article class=""><h3>Plagio e IA <span>léelo</span></h3><p>El plagio supone la pérdida de la convocatoria y consta en tu expediente. El uso de IA debe estar <strong>autorizado en cada actividad</strong> y declarado: la autoría sigue siendo tuya.</p></article></div>
+</section>
+
+<footer>
+  <span>Bioestadística &middot; Grado en Ingeniería Biomédica &middot; grupo MC1 (GC) &middot; primer semestre 2026/27</span>
+  <span>Calendario académico UEM 2026-2027. Los festivos pueden cambiar si los modifican el Estado o la Comunidad de Madrid.</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  var cal=document.getElementById('cal');
+  var btns=Array.prototype.slice.call(document.querySelectorAll('.lg[data-f]'));
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var on=b.getAttribute('aria-pressed')==='true';
+      btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+      if(on){cal.removeAttribute('data-only');}
+      else{b.setAttribute('aria-pressed','true');cal.setAttribute('data-only',b.dataset.f);}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

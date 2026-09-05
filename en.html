@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Course calendar for Statistics for Engineering 2026/27, group PBDE001201 (M21), Universidad Europea de Madrid.">
+<style>:root{color-scheme:light dark}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Statistics for Engineering 26/27</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#F7F4F3; --surface:#FFFFFF; --surface-2:#FBF8F7; --sunk:#EFEAE9;
+  --ink:#1F1A1B; --ink-2:#4A4143; --muted:#7D7173;
+  --rule:#E5DDDC; --rule-2:#CEC3C2;
+  --accent:#C4122F; --accent-2:#8A0C21;
+  --k-jitt:#B0761A; --k-lab:#0E8F86; --k-proj:#7A4FA8; --k-exam:#C4122F; --k-exam2:#8A0C21;
+  --t-jitt:#FBF2E4; --t-lab:#E4F3F1; --t-proj:#F0EAF8; --t-exam:#FBE8EB; --t-class:#F0ECEB;
+  --shadow:0 1px 2px rgba(31,26,27,.05),0 8px 24px -16px rgba(31,26,27,.28);
+  --sans:"IBM Plex Sans",ui-sans-serif,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  --serif:"Spectral",ui-serif,Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#141112; --surface:#1B1718; --surface-2:#221D1F; --sunk:#100D0E;
+  --ink:#F3EEED; --ink-2:#C6BCBB; --muted:#8F8486;
+  --rule:#332C2E; --rule-2:#4B4245;
+  --accent:#E04A62; --accent-2:#F08296;
+  --k-jitt:#BC8628; --k-lab:#1FA89A; --k-proj:#9B72D0; --k-exam:#E04A62; --k-exam2:#F08296;
+  --t-jitt:#2B2317; --t-lab:#122724; --t-proj:#241E30; --t-exam:#2E1A1E; --t-class:#241F21;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -18px rgba(0,0,0,.8);
+}}
+:root[data-theme="dark"]{
+  --ground:#141112; --surface:#1B1718; --surface-2:#221D1F; --sunk:#100D0E;
+  --ink:#F3EEED; --ink-2:#C6BCBB; --muted:#8F8486;
+  --rule:#332C2E; --rule-2:#4B4245;
+  --accent:#E04A62; --accent-2:#F08296;
+  --k-jitt:#BC8628; --k-lab:#1FA89A; --k-proj:#9B72D0; --k-exam:#E04A62; --k-exam2:#F08296;
+  --t-jitt:#2B2317; --t-lab:#122724; --t-proj:#241E30; --t-exam:#2E1A1E; --t-class:#241F21;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -18px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:34px 22px 80px}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- header ---------- */
+.hd{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:34px;
+  align-items:end;padding-bottom:22px;border-bottom:2px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;display:block;margin-bottom:10px}
+h1{font-size:clamp(30px,4.4vw,48px);font-weight:700;line-height:1.04;letter-spacing:-.015em}
+h1 em{font-style:italic;font-weight:500;color:var(--ink-2)}
+.lede{margin:12px 0 0;max-width:56ch;color:var(--ink-2);font-size:15.5px}
+.ds{display:grid;grid-template-columns:auto 1fr;gap:5px 16px;font-size:12.5px;align-content:end}
+.ds dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);padding-top:2px}
+.ds dd{margin:0;font-weight:500;color:var(--ink)}
+
+/* ---------- vitals ---------- */
+.vit{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));
+  gap:0;margin:0;border-bottom:1px solid var(--rule)}
+.vit div{padding:16px 18px 15px;border-right:1px solid var(--rule)}
+.vit div:last-child{border-right:0}
+.vit b{display:block;font-family:var(--mono);font-size:26px;font-weight:500;
+  letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.vit span{display:block;margin-top:6px;font-size:11.5px;color:var(--muted);line-height:1.35}
+.vit .neg b{color:var(--accent)}
+
+/* ---------- sections ---------- */
+section{margin-top:52px}
+.sh{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.sh h2{font-size:23px;font-weight:600;letter-spacing:-.01em}
+.sh .num{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.12em;
+  border:1px solid var(--rule-2);border-radius:2px;padding:2px 6px}
+.sub{color:var(--muted);font-size:14px;margin:0 0 20px;max-width:70ch}
+
+/* ---------- calendar ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;align-items:center}
+.lg{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:500;
+  background:var(--surface);border:1px solid var(--rule);border-radius:999px;
+  padding:5px 12px 5px 9px;cursor:pointer;color:var(--ink-2);font-family:inherit;
+  transition:border-color .12s,color .12s}
+.lg:hover{border-color:var(--rule-2);color:var(--ink)}
+.lg[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);background:var(--surface-2)}
+.lg i{width:11px;height:11px;border-radius:3px;flex:none}
+.lg.l-jitt i{background:var(--k-jitt)} .lg.l-lab i{background:var(--k-lab)}
+.lg.l-proj i{background:var(--k-proj)} .lg.l-exam i{background:var(--k-exam)}
+.lg.l-class i{background:var(--t-class);box-shadow:inset 0 -2px 0 var(--rule-2)}
+.lg.l-hol i{background:repeating-linear-gradient(135deg,var(--rule-2) 0 2px,transparent 2px 4px)}
+.lg.st{cursor:default;background:none;border-color:transparent;padding-left:2px;font-weight:400;color:var(--muted)}
+.lg.st:hover{border-color:transparent}
+
+.cal{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;
+  background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:18px;
+  box-shadow:var(--shadow)}
+.mo-h{display:flex;align-items:baseline;justify-content:space-between;
+  padding-bottom:7px;margin-bottom:8px;border-bottom:1px solid var(--rule)}
+.mo-n{font-family:var(--serif);font-size:15px;font-weight:600}
+.mo-y{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.08em}
+.mo-g{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.dow{font-family:var(--mono);font-size:9px;color:var(--muted);text-align:center;
+  padding-bottom:3px;letter-spacing:.04em}
+.dc{position:relative;display:flex;align-items:center;justify-content:center;
+  aspect-ratio:1/.92;border-radius:3px;font-family:var(--mono);font-size:11.5px;
+  color:var(--muted);font-variant-numeric:tabular-nums;transition:opacity .14s}
+.dc i{font-style:normal}
+.dc.pad{visibility:hidden}
+.dc.sem{background:var(--sunk);color:var(--ink-2)}
+.dc.wknd{color:var(--rule-2)}
+.dc.hol{background:repeating-linear-gradient(135deg,var(--rule) 0 3px,transparent 3px 6px);
+  color:var(--muted);box-shadow:inset 0 0 0 1px var(--rule)}
+.dc.brk{background:var(--sunk);color:var(--rule-2);
+  background-image:repeating-linear-gradient(135deg,transparent 0 5px,var(--rule) 5px 6px)}
+.dc.win{background:var(--t-exam);color:var(--accent-2);font-weight:500;box-shadow:inset 0 -1.5px 0 var(--t-exam),inset 0 -2.5px 0 var(--rule-2)}
+.dc.ses{color:var(--ink);font-weight:500;cursor:default}
+.dc.ses .sn{position:absolute;top:1px;right:3px;font-size:8px;font-weight:600;
+  letter-spacing:.02em;opacity:.85}
+.dc.f-class{background:var(--t-class);box-shadow:inset 0 -2.5px 0 var(--rule-2)}
+.dc.f-class .sn{color:var(--muted)}
+.dc.f-lab{background:var(--t-lab);box-shadow:inset 0 -2.5px 0 var(--k-lab)}
+.dc.f-lab .sn{color:var(--k-lab)}
+.dc.f-proj{background:var(--t-proj);box-shadow:inset 0 -2.5px 0 var(--k-proj)}
+.dc.f-proj .sn{color:var(--k-proj)}
+.dc.f-exam{background:var(--t-exam);box-shadow:inset 0 -2.5px 0 var(--k-exam)}
+.dc.f-exam .sn{color:var(--k-exam)}
+.cal[data-only="lab"] .dc.ses:not(.f-lab),.cal[data-only="lab"] .dc.hol,
+.cal[data-only="proj"] .dc.ses:not(.f-proj),.cal[data-only="proj"] .dc.hol,
+.cal[data-only="exam"] .dc.ses:not(.f-exam),.cal[data-only="exam"] .dc.hol,
+.cal[data-only="class"] .dc.ses:not(.f-class),.cal[data-only="class"] .dc.hol,
+.cal[data-only="hol"] .dc.ses{opacity:.16}
+
+/* ---------- assessment ---------- */
+.agrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:26px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  padding:20px 22px;box-shadow:var(--shadow)}
+.card h3{font-size:14px;font-weight:600;margin-bottom:3px}
+.card .ch{font-size:12px;color:var(--muted);margin:0 0 16px}
+.bar{display:flex;gap:2px;height:38px;margin-bottom:14px}
+.sg{display:flex;align-items:center;justify-content:center;border-radius:3px;min-width:0}
+.sg b{font-family:var(--mono);font-size:13px;font-weight:600;color:#fff;letter-spacing:-.01em}
+.sg b i{font-style:normal;font-size:9px;opacity:.8}
+.s-jitt{background:var(--k-jitt)} .s-lab{background:var(--k-lab)}
+.s-proj{background:var(--k-proj)} .s-exam{background:var(--k-exam)} .s-exam2{background:var(--k-exam2)}
+table.at{width:100%;border-collapse:collapse;font-size:13px}
+table.at td{padding:8px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+table.at tr:last-child td{border-bottom:0}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-top:4px}
+table.at td:first-child{width:20px}
+.an{font-weight:500}
+.asub{display:block;font-size:11px;color:var(--muted);font-weight:400}
+.aw{font-family:var(--mono);font-weight:600;text-align:right;width:52px;
+  font-variant-numeric:tabular-nums}
+.ad{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right;
+  padding-left:14px!important;white-space:nowrap}
+svg{width:100%;height:auto;display:block}
+.gl{stroke:var(--rule);stroke-width:1}
+.ax{stroke:var(--rule-2);stroke-width:1}
+.tk{font-family:var(--mono);font-size:9.5px;fill:var(--muted)}
+.tk.end{font-size:9px;fill:var(--muted)}
+.ln{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round}
+.ar{fill:var(--accent);opacity:.07;stroke:none}
+.dot{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.dot.last{r:5.5}
+.vl{font-family:var(--mono);font-size:10.5px;font-weight:600;fill:var(--ink-2)}
+.vl.strong{fill:var(--accent);font-size:12px}
+
+/* ---------- session table ---------- */
+.tw{background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  overflow-x:auto;box-shadow:var(--shadow)}
+table.ss{width:100%;border-collapse:collapse;font-size:13.5px;min-width:760px}
+table.ss td{padding:11px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.ss tr:last-child td{border-bottom:0}
+tr.ub td{background:var(--surface-2);padding:11px 12px;border-bottom:1px solid var(--rule-2);
+  border-top:1px solid var(--rule-2)}
+.ub-n{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-right:11px}
+.ub-t{font-family:var(--serif);font-size:15px;font-weight:600}
+.ub-w{font-family:var(--mono);font-size:10px;color:var(--muted);float:right;padding-top:4px}
+.c-wk{width:44px}
+.wk{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.03em}
+.c-dt{width:78px;white-space:nowrap}
+.dw{display:block;font-family:var(--mono);font-size:9.5px;color:var(--muted);
+  letter-spacing:.08em;text-transform:uppercase}
+.dd{display:block;font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--ink)}
+.c-no{width:34px;font-family:var(--mono);font-size:11px;color:var(--muted);
+  text-align:right;font-variant-numeric:tabular-nums}
+.st{font-weight:600;line-height:1.35;margin-bottom:3px}
+.sd{color:var(--muted);font-size:12.5px;line-height:1.45;max-width:62ch}
+.jt{display:inline-block;margin-left:8px;font-family:var(--mono);font-size:8.5px;
+  font-weight:600;letter-spacing:.08em;color:var(--k-jitt);border:1px solid var(--k-jitt);
+  border-radius:2px;padding:1px 4px;vertical-align:2px}
+.c-du{width:236px}
+.chip{display:block;font-size:11.5px;line-height:1.35;font-weight:500;
+  border-left:3px solid var(--rule-2);padding:3px 0 3px 9px;margin-bottom:6px;color:var(--ink-2)}
+.chip:last-child{margin-bottom:0}
+.chip b{font-family:var(--mono);font-size:11px;font-weight:600;white-space:nowrap}
+.c-lab{border-left-color:var(--k-lab)} .c-lab b{color:var(--k-lab)}
+.c-proj{border-left-color:var(--k-proj)} .c-proj b{color:var(--k-proj)}
+.c-exam{border-left-color:var(--k-exam)} .c-exam b{color:var(--k-exam)}
+.c-jitt{border-left-color:var(--k-jitt)} .c-jitt b{color:var(--k-jitt)}
+.nil{color:var(--rule-2);padding-left:12px;font-size:12px}
+tr.hr td,tr.br td{background:var(--sunk)}
+tr.hr .st,tr.br .st{font-weight:500;color:var(--muted);font-family:var(--serif);font-style:italic}
+tr.hr .dd,tr.br .dd{color:var(--muted)}
+tr.exm td{background:var(--t-exam)}
+tr.exm .st{color:var(--accent-2)}
+
+/* ---------- milestones ---------- */
+.ms{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;
+  background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  overflow:hidden;box-shadow:var(--shadow)}
+.ms>div{padding:18px 20px;border-right:1px solid var(--rule);
+  border-top:3px solid var(--k-proj);display:flex;flex-direction:column;gap:7px}
+.ms>div:last-child{border-right:0}
+.ms>div.fin{border-top-color:var(--accent);background:var(--surface-2)}
+.ms .mk{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--k-proj);font-weight:600}
+.ms>div.fin .mk{color:var(--accent)}
+.ms .md{font-family:var(--mono);font-size:14px;font-weight:600;letter-spacing:-.01em}
+.ms .mb{font-size:12.5px;color:var(--muted);line-height:1.5;margin:0}
+
+/* ---------- rules ---------- */
+.rl{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.rl article{background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  padding:17px 19px;box-shadow:var(--shadow)}
+.rl h3{font-size:13.5px;font-weight:600;margin-bottom:7px;display:flex;
+  align-items:baseline;gap:8px}
+.rl h3 span{font-family:var(--mono);font-size:9.5px;color:var(--muted);
+  letter-spacing:.1em;text-transform:uppercase}
+.rl p{margin:0;font-size:12.5px;color:var(--ink-2);line-height:1.55}
+.rl strong{color:var(--ink);font-weight:600}
+.rl .hot{border-color:var(--k-exam)}
+.rl .hot h3 span{color:var(--k-exam)}
+
+/* ---------- notes ---------- */
+.note{background:var(--surface-2);border:1px solid var(--rule-2);border-left:3px solid var(--accent);
+  border-radius:4px;padding:20px 22px}
+.note h3{font-size:14px;font-weight:600;margin-bottom:12px}
+.note ol{margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);line-height:1.6}
+.note li{margin-bottom:9px}
+.note li:last-child{margin-bottom:0}
+.note code{font-family:var(--mono);font-size:11.5px;background:var(--sunk);
+  padding:1px 5px;border-radius:2px;color:var(--ink)}
+footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--rule);
+  font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;
+  gap:16px;flex-wrap:wrap}
+footer span{font-family:var(--mono)}
+
+@media (max-width:860px){
+  .hd{grid-template-columns:1fr;gap:22px;align-items:start}
+  .agrid{grid-template-columns:1fr}
+  .ms>div{border-right:0;border-bottom:1px solid var(--rule)}
+}
+@media print{
+  :root{--ground:#fff;--surface:#fff;--shadow:none}
+  .wrap{max-width:100%;padding:0}
+  .legend{display:none}
+  section{break-inside:avoid;margin-top:26px}
+  table.ss tr,.card,.rl article,.ms>div{break-inside:avoid}
+  .tw{overflow:visible;border:1px solid #ccc}
+}
+
+.chart{background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  padding:22px 24px 18px;box-shadow:var(--shadow)}
+.chart svg{width:100%;height:auto;display:block}
+.gl{stroke:var(--rule);stroke-width:1}
+.ax{stroke:var(--rule-2);stroke-width:1}
+.gd{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:5 4;opacity:.55}
+.gt{font-family:var(--mono);font-size:11px;fill:var(--accent);letter-spacing:.02em}
+.tk{font-family:var(--mono);font-size:11.5px;fill:var(--muted)}
+.ln{fill:none;stroke:var(--accent);stroke-width:2.6;stroke-linejoin:round}
+.ar{fill:var(--accent);opacity:.07;stroke:none}
+.dot{fill:var(--accent);stroke:var(--surface);stroke-width:2.5}
+.vl{font-family:var(--mono);font-size:14px;font-weight:600;fill:var(--ink)}
+.vl.strong{fill:var(--accent);font-size:16px}
+.el{font-family:var(--sans);font-size:11.5px;fill:var(--muted)}
+
+</style>
+<div class="wrap">
+<header class="hd">
+  <div>
+    <span class="eyebrow">Universidad Europea de Madrid &middot; First semester 2026/27</span>
+    <h1>Statistics for<br>Engineering <em>26/27</em></h1>
+    <p class="lede">Everything you need to plan your semester: classes, deadlines and public holidays. Four Mondays are lost to holidays.</p>
+  </div>
+  <dl class="ds"><dt>Degree</dt><dd>Bachelor in Industrial Systems Engineering &middot; Year 2</dd><dt>Group</dt><dd>PBDE001201 &middot; M21 &middot; taught in English</dd><dt>Credits</dt><dd>6 ECTS &middot; Basic &middot; On site</dd><dt>Timetable</dt><dd>Mondays and Fridays, 18:30-20:30</dd><dt>Lecturer</dt><dd>Irene Garbajosa Suárez</dd><dt>Term</dt><dd>7 Sep 2026 &ndash; 22 Jan 2027</dd></dl>
+</header>
+
+<div class="vit"><div class=""><b>28</b><span>classes in total<br>7 Sep &ndash; 8 Jan</span></div><div class="neg"><b>4</b><span>Mondays lost<br>to public holidays</span></div><div class=""><b>18</b><span>JiTT quizzes<br>before class</span></div><div class=""><b>3</b><span>project uploads<br>all compulsory</span></div><div class=""><b>2</b><span>exams<br>midterm and final</span></div><div class=""><b>65<i style="font-size:16px;font-style:normal">%</i></b><span>of your grade is settled<br>by 18 December</span></div></div>
+
+<section>
+  <div class="sh"><span class="num">01</span><h2>Semester calendar</h2></div>
+  <p class="sub">Each numbered cell is a class, and the number matches the session in the table below. Hover over a day to see what is on. Click a filter to keep just one kind of day.</p>
+  <div class="legend">
+    <button class="lg l-class" data-f="class" aria-pressed="false"><i></i>Class</button>
+    <button class="lg l-lab" data-f="lab" aria-pressed="false"><i></i>Computational practice</button>
+    <button class="lg l-proj" data-f="proj" aria-pressed="false"><i></i>Project: upload or Flipped Classroom</button>
+    <button class="lg l-exam" data-f="exam" aria-pressed="false"><i></i>Exam</button>
+    <button class="lg l-hol" data-f="hol" aria-pressed="false"><i></i>Public holiday</button>
+    <span class="lg st"><i style="background:var(--t-exam);box-shadow:inset 0 -2px 0 var(--rule-2)"></i>Official assessment period</span>
+  </div>
+  <div class="cal" id="cal"><div class="mo"><div class="mo-h"><span class="mo-n">September</span><span class="mo-y">2026</span></div><div class="mo-g"><span class="dow">M</span><span class="dow">T</span><span class="dow">W</span><span class="dow">T</span><span class="dow">F</span><span class="dow">S</span><span class="dow">S</span><span class="dc pad"></span><span class="dc"><i>1</i></span><span class="dc"><i>2</i></span><span class="dc"><i>3</i></span><span class="dc"><i>4</i></span><span class="dc wknd"><i>5</i></span><span class="dc wknd"><i>6</i></span><span class="dc sem ses f-class" title="Session 1 — Course launch &amp;amp; data in engineering"><i>7</i><b class="sn">1</b></span><span class="dc sem"><i>8</i></span><span class="dc sem"><i>9</i></span><span class="dc sem"><i>10</i></span><span class="dc sem ses f-lab" title="Session 2 — Frequency distributions &amp;amp; graphics · Lab 0 — set up your environment"><i>11</i><b class="sn">2</b></span><span class="dc wknd"><i>12</i></span><span class="dc wknd"><i>13</i></span><span class="dc sem ses f-class" title="Session 3 — Central tendency &amp;amp; position"><i>14</i><b class="sn">3</b></span><span class="dc sem"><i>15</i></span><span class="dc sem"><i>16</i></span><span class="dc sem"><i>17</i></span><span class="dc sem ses f-lab" title="Session 4 — Dispersion, shape &amp;amp; outliers · Report 1 brief published"><i>18</i><b class="sn">4</b></span><span class="dc wknd"><i>19</i></span><span class="dc wknd"><i>20</i></span><span class="dc sem ses f-class" title="Session 5 — Bivariate description"><i>21</i><b class="sn">5</b></span><span class="dc sem"><i>22</i></span><span class="dc sem"><i>23</i></span><span class="dc sem"><i>24</i></span><span class="dc sem ses f-lab" title="Session 6 — Computational lab 1 — full EDA · In-class lab — work on Report 1"><i>25</i><b class="sn">6</b></span><span class="dc wknd"><i>26</i></span><span class="dc wknd"><i>27</i></span><span class="dc sem ses f-class" title="Session 7 — Foundations of probability"><i>28</i><b class="sn">7</b></span><span class="dc sem"><i>29</i></span><span class="dc sem"><i>30</i></span></div></div><div class="mo"><div class="mo-h"><span class="mo-n">October</span><span class="mo-y">2026</span></div><div class="mo-g"><span class="dow">M</span><span class="dow">T</span><span class="dow">W</span><span class="dow">T</span><span class="dow">F</span><span class="dow">S</span><span class="dow">S</span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc sem"><i>1</i></span><span class="dc sem ses f-class" title="Session 8 — Conditional probability &amp;amp; Bayes"><i>2</i><b class="sn">8</b></span><span class="dc wknd"><i>3</i></span><span class="dc wknd"><i>4</i></span><span class="dc sem ses f-class" title="Session 9 — Reliability problem clinic"><i>5</i><b class="sn">9</b></span><span class="dc sem"><i>6</i></span><span class="dc sem"><i>7</i></span><span class="dc sem"><i>8</i></span><span class="dc sem ses f-lab" title="Session 10 — Report 1 review workshop · Activity 2 — Computational Practices Report 1 5%"><i>9</i><b class="sn">10</b></span><span class="dc wknd"><i>10</i></span><span class="dc wknd"><i>11</i></span><span class="dc hol" title="Public holiday · Fiesta Nacional de España"><i>12</i></span><span class="dc sem"><i>13</i></span><span class="dc sem"><i>14</i></span><span class="dc sem"><i>15</i></span><span class="dc sem ses f-proj" title="Session 11 — Discrete random variables · Project upload 1 — topic, data and question"><i>16</i><b class="sn">11</b></span><span class="dc wknd"><i>17</i></span><span class="dc wknd"><i>18</i></span><span class="dc sem ses f-class" title="Session 12 — Continuous random variables"><i>19</i><b class="sn">12</b></span><span class="dc sem"><i>20</i></span><span class="dc sem"><i>21</i></span><span class="dc sem"><i>22</i></span><span class="dc sem ses f-class" title="Session 13 — The Normal distribution &amp;amp; the CLT"><i>23</i><b class="sn">13</b></span><span class="dc wknd"><i>24</i></span><span class="dc wknd"><i>25</i></span><span class="dc sem ses f-lab" title="Session 14 — Assessed problem session · Activity 3 — In-class problem solving 5%"><i>26</i><b class="sn">14</b></span><span class="dc sem"><i>27</i></span><span class="dc sem"><i>28</i></span><span class="dc sem"><i>29</i></span><span class="dc sem ses f-class" title="Session 15 — Integrative review &amp;amp; mock exam"><i>30</i><b class="sn">15</b></span><span class="dc wknd"><i>31</i></span></div></div><div class="mo"><div class="mo-h"><span class="mo-n">November</span><span class="mo-y">2026</span></div><div class="mo-g"><span class="dow">M</span><span class="dow">T</span><span class="dow">W</span><span class="dow">T</span><span class="dow">F</span><span class="dow">S</span><span class="dow">S</span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc wknd"><i>1</i></span><span class="dc hol" title="Public holiday · All Saints&#x27; Day (observed)"><i>2</i></span><span class="dc sem"><i>3</i></span><span class="dc sem"><i>4</i></span><span class="dc sem"><i>5</i></span><span class="dc sem ses f-exam" title="Session 16 — Midterm exam · Midterm exam 15%"><i>6</i><b class="sn">16</b></span><span class="dc wknd"><i>7</i></span><span class="dc wknd"><i>8</i></span><span class="dc hol" title="Public holiday · Nuestra Señora de la Almudena"><i>9</i></span><span class="dc sem"><i>10</i></span><span class="dc sem"><i>11</i></span><span class="dc sem"><i>12</i></span><span class="dc sem ses f-proj" title="Session 17 — Estimation &amp;amp; confidence intervals · Project upload 2 — data and descriptive analysis · Report 2 brief published"><i>13</i><b class="sn">17</b></span><span class="dc wknd"><i>14</i></span><span class="dc wknd"><i>15</i></span><span class="dc sem ses f-class" title="Session 18 — Hypothesis testing"><i>16</i><b class="sn">18</b></span><span class="dc sem"><i>17</i></span><span class="dc sem"><i>18</i></span><span class="dc sem"><i>19</i></span><span class="dc sem ses f-lab" title="Session 19 — Computational lab 2 — two-sample inference · In-class lab — work on Report 2"><i>20</i><b class="sn">19</b></span><span class="dc wknd"><i>21</i></span><span class="dc wknd"><i>22</i></span><span class="dc sem ses f-lab" title="Session 20 — Linear regression · Activity 4 — Computational Practices Report 2 5%"><i>23</i><b class="sn">20</b></span><span class="dc sem"><i>24</i></span><span class="dc sem"><i>25</i></span><span class="dc sem"><i>26</i></span><span class="dc sem ses f-class" title="Session 21 — Model diagnostics"><i>27</i><b class="sn">21</b></span><span class="dc wknd"><i>28</i></span><span class="dc wknd"><i>29</i></span><span class="dc sem ses f-class" title="Session 22 — One-way ANOVA"><i>30</i><b class="sn">22</b></span></div></div><div class="mo"><div class="mo-h"><span class="mo-n">December</span><span class="mo-y">2026</span></div><div class="mo-g"><span class="dow">M</span><span class="dow">T</span><span class="dow">W</span><span class="dow">T</span><span class="dow">F</span><span class="dow">S</span><span class="dow">S</span><span class="dc pad"></span><span class="dc sem"><i>1</i></span><span class="dc sem"><i>2</i></span><span class="dc sem"><i>3</i></span><span class="dc sem ses f-proj" title="Session 23 — Data analysis lab — χ² and non-parametrics · Activity 5 — Project upload: full data analysis 5%"><i>4</i><b class="sn">23</b></span><span class="dc wknd"><i>5</i></span><span class="dc wknd"><i>6</i></span><span class="dc hol" title="Public holiday · Constitution Day (observed)"><i>7</i></span><span class="dc hol" title="Public holiday · Immaculate Conception"><i>8</i></span><span class="dc sem"><i>9</i></span><span class="dc sem"><i>10</i></span><span class="dc sem ses f-proj" title="Session 24 — Design of experiments"><i>11</i><b class="sn">24</b></span><span class="dc wknd"><i>12</i></span><span class="dc wknd"><i>13</i></span><span class="dc sem ses f-proj" title="Session 25 — Flipped Classroom — block A · Activity 6 — Teaching slot &amp;amp; defence 25%"><i>14</i><b class="sn">25</b></span><span class="dc sem"><i>15</i></span><span class="dc sem"><i>16</i></span><span class="dc sem"><i>17</i></span><span class="dc sem ses f-proj" title="Session 26 — Flipped Classroom — block B · Activity 6 — Teaching slot &amp;amp; defence 25% · JiTT series closes 5%"><i>18</i><b class="sn">26</b></span><span class="dc wknd"><i>19</i></span><span class="dc wknd"><i>20</i></span><span class="dc sem ses f-class" title="Session 27 — Semester close-out"><i>21</i><b class="sn">27</b></span><span class="dc sem"><i>22</i></span><span class="dc brk" title="Christmas break"><i>23</i></span><span class="dc brk" title="Christmas break"><i>24</i></span><span class="dc hol" title="Public holiday · Christmas Day"><i>25</i></span><span class="dc wknd brk" title="Christmas break"><i>26</i></span><span class="dc wknd brk" title="Christmas break"><i>27</i></span><span class="dc brk" title="Christmas break"><i>28</i></span><span class="dc brk" title="Christmas break"><i>29</i></span><span class="dc brk" title="Christmas break"><i>30</i></span><span class="dc brk" title="Christmas break"><i>31</i></span></div></div><div class="mo"><div class="mo-h"><span class="mo-n">January</span><span class="mo-y">2027</span></div><div class="mo-g"><span class="dow">M</span><span class="dow">T</span><span class="dow">W</span><span class="dow">T</span><span class="dow">F</span><span class="dow">S</span><span class="dow">S</span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc pad"></span><span class="dc hol" title="Public holiday · New Year&#x27;s Day"><i>1</i></span><span class="dc wknd brk" title="Christmas break"><i>2</i></span><span class="dc wknd brk" title="Christmas break"><i>3</i></span><span class="dc brk" title="Christmas break"><i>4</i></span><span class="dc brk" title="Christmas break"><i>5</i></span><span class="dc hol" title="Public holiday · Epiphany"><i>6</i></span><span class="dc sem"><i>7</i></span><span class="dc sem ses f-class" title="Session 28 — Final revision clinic"><i>8</i><b class="sn">28</b></span><span class="dc wknd"><i>9</i></span><span class="dc wknd"><i>10</i></span><span class="dc sem win" title="Official assessment period"><i>11</i></span><span class="dc sem win" title="Official assessment period"><i>12</i></span><span class="dc sem win" title="Official assessment period"><i>13</i></span><span class="dc sem win" title="Official assessment period"><i>14</i></span><span class="dc sem win" title="Official assessment period"><i>15</i></span><span class="dc wknd"><i>16</i></span><span class="dc wknd"><i>17</i></span><span class="dc sem win" title="Official assessment period"><i>18</i></span><span class="dc sem win" title="Official assessment period"><i>19</i></span><span class="dc sem win" title="Official assessment period"><i>20</i></span><span class="dc sem win" title="Official assessment period"><i>21</i></span><span class="dc sem win" title="Official assessment period"><i>22</i></span><span class="dc wknd"><i>23</i></span><span class="dc wknd"><i>24</i></span><span class="dc"><i>25</i></span><span class="dc"><i>26</i></span><span class="dc"><i>27</i></span><span class="dc"><i>28</i></span><span class="dc"><i>29</i></span><span class="dc wknd"><i>30</i></span><span class="dc wknd"><i>31</i></span></div></div></div>
+</section>
+
+<section>
+  <div class="sh"><span class="num">02</span><h2>How your grade is worked out</h2></div>
+  <p class="sub">You need 5.0 overall <em>and</em> 5.0 in the final exam for everything else to count.</p>
+  <div class="agrid">
+    <div class="card">
+      <h3>Grade breakdown</h3>
+      <p class="ch">Total 100%</p>
+      <div class="bar"><span class="sg s-jitt" style="flex:5" title="JiTT consistency — 5%"><b>5<i>%</i></b></span><span class="sg s-lab" style="flex:20" title="Computational practices — 20%"><b>20<i>%</i></b></span><span class="sg s-proj" style="flex:25" title="Project & Flipped Classroom — 25%"><b>25<i>%</i></b></span><span class="sg s-exam" style="flex:15" title="Midterm exam — 15%"><b>15<i>%</i></b></span><span class="sg s-exam2" style="flex:35" title="Final exam — 35%"><b>35<i>%</i></b></span></div>
+      <table class="at"><tbody><tr><td><span class="sw s-jitt"></span></td><td class="an">JiTT consistency</td><td class="aw">5%</td><td class="ad">Weekly, closes 18 Dec</td></tr><tr><td><span class="sw s-lab"></span></td><td class="an">Computational practices</td><td class="aw">20%</td><td class="ad">9 Oct &middot; 26 Oct &middot; 23 Nov</td></tr><tr><td><span class="sw s-proj"></span></td><td class="an">Project & Flipped Classroom</td><td class="aw">25%</td><td class="ad">4 Dec &middot; 11, 14 &amp; 18 Dec</td></tr><tr><td><span class="sw s-exam"></span></td><td class="an">Midterm exam</td><td class="aw">15%</td><td class="ad">Fri 6 Nov</td></tr><tr><td><span class="sw s-exam2"></span></td><td class="an">Final exam</td><td class="aw">35%</td><td class="ad">11&ndash;22 Jan</td></tr></tbody></table>
+    </div>
+    <div class="card">
+      <h3>What matters most</h3>
+      <p class="ch">Three things that decide your year</p>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:4px">
+        <div class="pill">The <strong>final exam is 35%</strong> and you must score at least 5.0 in it. Everything else you do all term only counts once you clear that bar.</div>
+        <div class="pill">The Flipped Classroom is worth <strong>25%</strong>, more than the midterm. To be allowed to present, your team must have submitted <strong>all three progress uploads</strong>.</div>
+        <div class="pill">The JiTT assignments are worth 5%, but you get the points just for doing them. Keep in mind that if you stop doing them in October, that 5% cannot be recovered.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="num">03</span><h2>How your grade builds up</h2></div>
+  <p class="sub">Share of the final grade already decided at each date.</p>
+  <div class="chart"><svg viewBox="0 0 1120 310" role="img" aria-label="Cumulative share of the grade decided over the semester, from 0% in September to 100% at the final exam." preserveAspectRatio="xMidYMid meet"><line class="gl" x1="64" y1="262.0" x2="1066" y2="262.0"/><text class="tk" x="54" y="266.0" text-anchor="end">0%</text><line class="gl" x1="64" y1="209.5" x2="1066" y2="209.5"/><text class="tk" x="54" y="213.5" text-anchor="end">25%</text><line class="gl" x1="64" y1="157.0" x2="1066" y2="157.0"/><text class="tk" x="54" y="161.0" text-anchor="end">50%</text><line class="gl" x1="64" y1="104.5" x2="1066" y2="104.5"/><text class="tk" x="54" y="108.5" text-anchor="end">75%</text><line class="gl" x1="64" y1="52.0" x2="1066" y2="52.0"/><text class="tk" x="54" y="56.0" text-anchor="end">100%</text><path class="ar" d="M 64.0 262.0 L 298.0 262.0 L 298.0 251.5 L 422.4 251.5 L 422.4 241.0 L 502.8 241.0 L 502.8 209.5 L 627.2 209.5 L 627.2 199.0 L 707.6 199.0 L 707.6 188.5 L 810.0 188.5 L 810.0 125.5 L 1014.8 125.5 L 1014.8 52.0 L 1066.0 52.0 L 1066.0 262.0 L 64.0 262.0 Z"/><line class="gd" x1="64" y1="125.5" x2="810.0" y2="125.5"/><text class="gt" x="72" y="116.5">65% locked in before Christmas</text><path class="ln" d="M 64.0 262.0 L 298.0 262.0 L 298.0 251.5 L 422.4 251.5 L 422.4 241.0 L 502.8 241.0 L 502.8 209.5 L 627.2 209.5 L 627.2 199.0 L 707.6 199.0 L 707.6 188.5 L 810.0 188.5 L 810.0 125.5 L 1014.8 125.5 L 1014.8 52.0 L 1066.0 52.0"/><circle class="dot" cx="298.0" cy="251.5" r="4.5"/><text class="vl" x="298.0" y="238.5" text-anchor="middle">5%</text><text class="el" x="298.0" y="223.5" text-anchor="middle">Report 1</text><circle class="dot" cx="422.4" cy="241.0" r="4.5"/><text class="vl" x="422.4" y="228.0" text-anchor="middle">10%</text><text class="el" x="422.4" y="213.0" text-anchor="middle">Problem session</text><circle class="dot" cx="502.8" cy="209.5" r="4.5"/><text class="vl" x="502.8" y="196.5" text-anchor="middle">25%</text><text class="el" x="502.8" y="181.5" text-anchor="middle">Midterm</text><circle class="dot" cx="627.2" cy="199.0" r="4.5"/><text class="vl" x="627.2" y="186.0" text-anchor="middle">30%</text><text class="el" x="627.2" y="171.0" text-anchor="middle">Report 2</text><circle class="dot" cx="707.6" cy="188.5" r="4.5"/><text class="vl" x="707.6" y="175.5" text-anchor="middle">35%</text><text class="el" x="707.6" y="160.5" text-anchor="middle">Upload 3</text><circle class="dot" cx="810.0" cy="125.5" r="4.5"/><text class="vl" x="810.0" y="112.5" text-anchor="middle">65%</text><text class="el" x="810.0" y="97.5" text-anchor="middle">Flipped Classroom</text><circle class="dot last" cx="1014.8" cy="52.0" r="5.5"/><text class="vl strong" x="1002.8" y="39.0" text-anchor="end">100%</text><text class="el" x="1002.8" y="24.0" text-anchor="end">Final exam</text><line class="ax" x1="64.0" y1="262.0" x2="64.0" y2="268.0"/><text class="tk" x="64.0" y="283.0" text-anchor="middle">Sep</text><line class="ax" x1="239.5" y1="262.0" x2="239.5" y2="268.0"/><text class="tk" x="239.5" y="283.0" text-anchor="middle">Oct</text><line class="ax" x1="466.3" y1="262.0" x2="466.3" y2="268.0"/><text class="tk" x="466.3" y="283.0" text-anchor="middle">Nov</text><line class="ax" x1="685.7" y1="262.0" x2="685.7" y2="268.0"/><text class="tk" x="685.7" y="283.0" text-anchor="middle">Dec</text><line class="ax" x1="912.4" y1="262.0" x2="912.4" y2="268.0"/><text class="tk" x="912.4" y="283.0" text-anchor="middle">Jan</text></svg></div>
+</section>
+
+<section>
+  <div class="sh"><span class="num">04</span><h2>The project, step by step</h2></div>
+  <p class="sub">The three uploads go to the Virtual Campus and <b>do not change what we do in class</b>: they are how I see your real progress and can steer you in time.</p>
+  <div class="ms"><div class=""><span class="mk">Upload 1</span><span class="md">Fri 16 Oct</span><p class="mb">You pick a topic and a dataset and state your research question, with the response variable and the candidate factors.</p></div><div class=""><span class="mk">Upload 2</span><span class="md">Fri 13 Nov</span><p class="mb">Data in hand: descriptive analysis, a check that the design holds up, and a log of any deviations.</p></div><div class=""><span class="mk">Upload 3</span><span class="md">Fri 4 Dec</span><p class="mb">The full analysis using the methods covered in class, results interpreted and a draft of your conclusions.</p></div><div class="fin"><span class="mk">Flipped Classroom</span><span class="md">11, 14 &amp; 18 Dec</span><p class="mb">You teach: 60 minutes on your topic and experiment, plus questions from the class.</p></div></div>
+</section>
+
+<section>
+  <div class="sh"><span class="num">05</span><h2>Session by session</h2></div>
+  <p class="sub">Sessions marked <span class="jt" style="margin-left:0">JiTT</span> have a pre-class quiz, closing at 18:00 the day before the class</p>
+  <div class="tw"><table class="ss"><tbody><tr class="ub"><td colspan="5"><span class="ub-n">Unit 1</span><span class="ub-t">Descriptive statistics</span><span class="ub-w">Weeks 1-3</span></td></tr><tr><td class="c-wk"><span class="wk">W1</span></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">7 Sep</span></td><td class="c-no">1</td><td class="c-tx"><div class="st">Course launch & data in engineering</div><div class="sd">How the course works, how you are graded, the JiTT routine and the R/Python toolchain. You form your project team (4-5). Population vs. sample, variable types, sampling designs.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">W1</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">11 Sep</span></td><td class="c-no">2</td><td class="c-tx"><div class="st">Frequency distributions & graphics<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Frequency tables, histograms, Pareto charts, box plots. Bring a laptop: you set up Jupyter or RMarkdown and run your first notebook.</div></td><td class="c-du"><span class="chip c-lab">Lab 0 — set up your environment</span></td></tr><tr><td class="c-wk"><span class="wk">W2</span></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">14 Sep</span></td><td class="c-no">3</td><td class="c-tx"><div class="st">Central tendency & position<span class="jt" title="The JiTT quiz closes at 18:00 the day before the classs">JiTT</span></div><div class="sd">Mean, median, mode, trimmed mean; quartiles and percentiles, and why the median survives a contaminated sample.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">W2</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">18 Sep</span></td><td class="c-no">4</td><td class="c-tx"><div class="st">Dispersion, shape & outliers<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Range, variance, s and CV; skewness and kurtosis. Outlier rules (1.5·IQR, z-score) and Chebyshev's inequality.</div></td><td class="c-du"><span class="chip c-lab">Report 1 brief published</span></td></tr><tr><td class="c-wk"><span class="wk">W3</span></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">21 Sep</span></td><td class="c-no">5</td><td class="c-tx"><div class="st">Bivariate description<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Covariance, Pearson and Spearman correlation, the least-squares line and R². Why correlation is not causation in process data.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">W3</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">25 Sep</span></td><td class="c-no">6</td><td class="c-tx"><div class="st">Computational lab 1 — full EDA</div><div class="sd">You work through a complete exploratory analysis of an engineering dataset in class: cleaning, summaries, plots and a written interpretation.</div></td><td class="c-du"><span class="chip c-lab">In-class lab — work on Report 1</span></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Unit 2</span><span class="ub-t">Probability</span><span class="ub-w">Weeks 4-5</span></td></tr><tr><td class="c-wk"><span class="wk">W4</span></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">28 Sep</span></td><td class="c-no">7</td><td class="c-tx"><div class="st">Foundations of probability<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Random experiments, sample space, events, Kolmogorov's axioms and counting rules.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">W4</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">2 Oct</span></td><td class="c-no">8</td><td class="c-tx"><div class="st">Conditional probability & Bayes<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Independence, total probability and Bayes' theorem, applied to defect screening, false positives and test reliability.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">W5</span></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">5 Oct</span></td><td class="c-no">9</td><td class="c-tx"><div class="st">Reliability problem clinic<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Probability trees; series, parallel and k-out-of-n systems; redundancy and reliability block diagrams. You solve, we discuss.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">W5</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">9 Oct</span></td><td class="c-no">10</td><td class="c-tx"><div class="st">Report 1 review workshop</div><div class="sd">We go through your submissions together: the statistical errors that come up most often and what a good notebook looks like.</div></td><td class="c-du"><span class="chip c-lab">Activity 2 — Computational Practices Report 1 <b>5%</b></span></td></tr><tr class="hr"><td class="c-wk"></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">12 Oct</span></td><td class="c-no">&mdash;</td><td class="c-tx" colspan="2"><div class="st">No class &middot; Fiesta Nacional de España</div></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Unit 3</span><span class="ub-t">Density and distribution functions</span><span class="ub-w">Weeks 6-7</span></td></tr><tr><td class="c-wk"><span class="wk">W6</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">16 Oct</span></td><td class="c-no">11</td><td class="c-tx"><div class="st">Discrete random variables<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">pmf, cdf, E[X] and Var[X]. Bernoulli, Binomial and Poisson: defects per unit, arrivals per interval.</div></td><td class="c-du"><span class="chip c-proj">Project upload 1 — topic, data and question</span></td></tr><tr><td class="c-wk"><span class="wk">W7</span></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">19 Oct</span></td><td class="c-no">12</td><td class="c-tx"><div class="st">Continuous random variables<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">pdf and cdf. Uniform and Exponential: memorylessness, failure rate and MTBF, with a look ahead to Weibull.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">W7</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">23 Oct</span></td><td class="c-no">13</td><td class="c-tx"><div class="st">The Normal distribution & the CLT<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Standardisation, Q-Q plots, the normal approximation to the binomial and the Central Limit Theorem.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Block</span><span class="ub-t">Review and midterm</span><span class="ub-w">Weeks 8-9</span></td></tr><tr><td class="c-wk"><span class="wk">W8</span></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">26 Oct</span></td><td class="c-no">14</td><td class="c-tx"><div class="st">Assessed problem session</div><div class="sd">You solve engineering problems across Units 1-3 in class, individually, with your notes. It is graded, but it is not an exam.</div></td><td class="c-du"><span class="chip c-lab">Activity 3 — In-class problem solving <b>5%</b></span></td></tr><tr><td class="c-wk"><span class="wk">W8</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">30 Oct</span></td><td class="c-no">15</td><td class="c-tx"><div class="st">Integrative review & mock exam</div><div class="sd">A full mock paper worked through in class, the marking criteria, exam technique and open Q&A.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr class="hr"><td class="c-wk"></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">2 Nov</span></td><td class="c-no">&mdash;</td><td class="c-tx" colspan="2"><div class="st">No class &middot; All Saints' Day (observed)</div></td></tr><tr><td class="c-wk"><span class="wk">W9</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">6 Nov</span></td><td class="c-no">16</td><td class="c-tx"><div class="st">Midterm exam</div><div class="sd">Written test on Units 1-3. You get a formula sheet; bring a scientific calculator.</div></td><td class="c-du"><span class="chip c-exam">Midterm exam <b>15%</b></span></td></tr><tr class="hr"><td class="c-wk"></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">9 Nov</span></td><td class="c-no">&mdash;</td><td class="c-tx" colspan="2"><div class="st">No class &middot; Nuestra Señora de la Almudena</div></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Unit 4</span><span class="ub-t">Statistical inference</span><span class="ub-w">Weeks 10-11</span></td></tr><tr><td class="c-wk"><span class="wk">W10</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">13 Nov</span></td><td class="c-no">17</td><td class="c-tx"><div class="st">Estimation & confidence intervals<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Sampling distributions and the CLT in practice. Point estimates and confidence intervals for μ, p and σ². You get your midterm back.</div></td><td class="c-du"><span class="chip c-proj">Project upload 2 — data and descriptive analysis</span><span class="chip c-lab">Report 2 brief published</span></td></tr><tr><td class="c-wk"><span class="wk">W11</span></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">16 Nov</span></td><td class="c-no">18</td><td class="c-tx"><div class="st">Hypothesis testing<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">H₀ and H₁, Type I and Type II error, α, the p-value, power and sample size. One-sample tests.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">W11</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">20 Nov</span></td><td class="c-no">19</td><td class="c-tx"><div class="st">Computational lab 2 — two-sample inference<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Paired and independent t-tests, the F-test for variances and two proportions, worked on real process data in class.</div></td><td class="c-du"><span class="chip c-lab">In-class lab — work on Report 2</span></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Unit 5</span><span class="ub-t">Data analysis</span><span class="ub-w">Weeks 12-13</span></td></tr><tr><td class="c-wk"><span class="wk">W12</span></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">23 Nov</span></td><td class="c-no">20</td><td class="c-tx"><div class="st">Linear regression<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Simple and multiple least squares, R² and adjusted R², inference on the coefficients and prediction intervals.</div></td><td class="c-du"><span class="chip c-lab">Activity 4 — Computational Practices Report 2 <b>5%</b></span></td></tr><tr><td class="c-wk"><span class="wk">W12</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">27 Nov</span></td><td class="c-no">21</td><td class="c-tx"><div class="st">Model diagnostics<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Residual analysis, heteroscedasticity, multicollinearity (VIF), influential points and model selection.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">W13</span></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">30 Nov</span></td><td class="c-no">22</td><td class="c-tx"><div class="st">One-way ANOVA<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Model and assumptions, the ANOVA table, the F-test and Tukey's multiple comparisons.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr><tr><td class="c-wk"><span class="wk">W13</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">4 Dec</span></td><td class="c-no">23</td><td class="c-tx"><div class="st">Data analysis lab — χ² and non-parametrics<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">Goodness-of-fit, contingency tables and non-parametric alternatives, applied to your own project data in class.</div></td><td class="c-du"><span class="chip c-proj"> Final project upload — full data analysis <b>5%</b></span></td></tr><tr class="hr"><td class="c-wk"></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">7 Dec</span></td><td class="c-no">&mdash;</td><td class="c-tx" colspan="2"><div class="st">No class &middot; Constitution Day (observed)</div></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Unit 6</span><span class="ub-t">Design of experiments</span><span class="ub-w">Weeks 14-15</span></td></tr><tr><td class="c-wk"><span class="wk">W14</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">11 Dec</span></td><td class="c-no">24</td><td class="c-tx"><div class="st">Flipped Classroom<span class="jt" title="The JiTT quiz closes at 18:00 the day before the class">JiTT</span></div><div class="sd">First team teaches: 60 minutes on your topic and experiment, plus questions from the class.</div></td><td class="c-du"><span class="chip c-proj">Project — Teaching slot &amp; defence <b>25%</b></span></td></tr><tr><td class="c-wk"><span class="wk">W15</span></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">14 Dec</span></td><td class="c-no">25</td><td class="c-tx"><div class="st">Flipped Classroom</div><div class="sd">Next team teaches: 60 minutes on your topic and experiment, plus questions from the class.</div></td><td class="c-du"><span class="chip c-proj">Project — Teaching slot &amp; defence <b>25%</b></span></td></tr><tr><td class="c-wk"><span class="wk">W15</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">18 Dec</span></td><td class="c-no">26</td><td class="c-tx"><div class="st">Flipped Classroom</div><div class="sd">The remaining teams present.</div></td><td class="c-du"><span class="chip c-proj">Project — Teaching slot &amp; defence <b>25%</b></span><span class="chip c-jitt">JiTT series closes <b>5%</b></span></td></tr><tr class="ub"><td colspan="5"><span class="ub-n">Close-out</span><span class="ub-t">Final revision</span><span class="ub-w">Week 16</span></td></tr><tr><td class="c-wk"><span class="wk">W16</span></td><td class="c-dt"><span class="dw">Mon</span><span class="dd">21 Dec</span></td><td class="c-no">27</td><td class="c-tx"><div class="st">Semester close-out</div><div class="sd">Feedback on the presentations, a map of the whole syllabus and the study guide for the final exam.</div></td><td class="c-du"><span class="nil">&mdash;</span></td><tr class="br"><td class="c-wk"></td><td class="c-dt"><span class="dd">23 Dec – 6 Jan</span></td><td class="c-no">&mdash;</td><td class="c-tx" colspan="2"><div class="st">Christmas break</div></td></tr><tr><td class="c-wk"><span class="wk">W16</span></td><td class="c-dt"><span class="dw">Fri</span><span class="dd">8 Jan</span></td><td class="c-no">28</td><td class="c-tx"><div class="st">Final revision clinic</div><div class="sd">A past paper worked through, the formula sheet reviewed and open consultation. This is the last day to hand in anything outstanding.</div></td><td class="c-du"><span class="nil">&mdash;</span></td></tr>
+    <tr class="ub"><td colspan="5"><span class="ub-n">Official</span><span class="ub-t">Assessment period</span><span class="ub-w">Weeks 17-18</span></td></tr>
+    <tr class="exm"><td class="c-wk"><span class="wk">W17-18</span></td>
+      <td class="c-dt"><span class="dw">To be set</span><span class="dd">11&ndash;22 Jan</span></td>
+      <td class="c-no">&mdash;</td>
+      <td class="c-tx"><div class="st">Final exam &mdash; whole syllabus</div>
+      <div class="sd">The exact day and room are published later by the School, in the official examination timetable. You need 5.0 for it to be averaged with the rest.</div></td>
+      <td class="c-du"><span class="chip c-exam">Final exam <b>35%</b></span></td></tr>
+  </tbody></table></div>
+</section>
+
+<section>
+  <div class="sh"><span class="num">06</span><h2>What you need to know</h2></div>
+  <p class="sub">The rules that cost the most marks every year.</p>
+  <div class="rl"><article class="hot"><h3>Attendance <span>50% floor</span></h3><p>Attendance is taken every session. Below <strong>50%</strong> you may sit the ordinary exam but <strong>it will not be graded</strong>. Verified attendance via Teams counts when your absence is justified.</p></article><article class="hot"><h3>To pass <span>two conditions</span></h3><p>You need a <strong>weighted average of 5.0</strong> and also <strong>5.0 in the final exam</strong>. Below 5.0 in the final, nothing else can be averaged in.</p></article><article class=""><h3>JiTT quizzes <span>18:00 before class day</span></h3><p>Each pre-class quiz closes at <strong>18:00 CET on the day before the class</strong>. Wrong answers are not penalised: what counts is doing them, on time.</p></article><article class=""><h3>Submissions <span>23:59</span></h3><p>All written work is due at <strong>23:59</strong> on the stated date, on the Virtual Campus. Late work is penalised; the absolute cut-off is the day before the ordinary exam.</p></article><article class=""><h3>Your team <span>4-5 people</span></h3><p>Teams of <strong>4 to 5</strong>. The <strong>three progress uploads are compulsory</strong>: miss one and your team cannot present, losing the whole 25%. Your teaching slot is <strong>60 minutes</strong> plus questions.</p></article><article class=""><h3>Plagiarism &amp; AI <span>read this</span></h3><p>Plagiarism means losing the assessment period and it goes on your record. AI use must be <strong>authorised for each activity</strong> and declared: you remain the author.</p></article></div>
+</section>
+
+<footer>
+  <span>Statistics for Engineering &middot; group PBDE001201 (M21) &middot; first semester 2026/27</span>
+  <span>UEM academic calendar 2026-2027. Public holidays may change if the State or the Comunidad de Madrid alter them.</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  var cal=document.getElementById('cal');
+  var btns=Array.prototype.slice.call(document.querySelectorAll('.lg[data-f]'));
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var on=b.getAttribute('aria-pressed')==='true';
+      btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+      if(on){cal.removeAttribute('data-only');}
+      else{b.setAttribute('aria-pressed','true');cal.setAttribute('data-only',b.dataset.f);}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
